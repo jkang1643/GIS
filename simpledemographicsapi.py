@@ -1,8 +1,8 @@
 import requests
 
 base_url = 'https://www.broadbandmap.gov/broadbandmap/demographic/2014/coordinates?'
-latitude = '42.456'
-longitude = '-74.987'
+latitude = '42.456345'
+longitude = '-74.9874534'
 json_url = base_url + "latitude=" + latitude + "&longitude=" + longitude + "&format=json"
 
 print(json_url)
