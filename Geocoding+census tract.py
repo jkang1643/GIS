@@ -8,8 +8,10 @@ params = {
     'street': '35 Greycliff Rd.',
     'city': 'Boston ',
     'state': 'MA',
-    'format':'json'
+    'format':'json',
+    'key':'ec7ebde81a7a1772203e43dfed95a061d4c5118d'
 }
+
 # Do the request and get the response data
 req = requests.get(web_scrape_url, params=params)
 str = req.json()
@@ -29,3 +31,9 @@ block_name = (dictionary_geo['NAME'])
 block_group = (dictionary_geo['BLKGRP'])
 block_land_area = (dictionary_geo['AREALAND'])
 block_water_area = (dictionary_geo['AREAWATER'])
+state_blkgrp = (dictionary_geo['BLKGRP'])
+state_id = (dictionary_geo['STATE'])
+county_id = (dictionary_geo['COUNTY'])
+tract_id = (dictionary_geo['TRACT'])
+
+print(state_blkgrp,state_id,county_id,tract_id)

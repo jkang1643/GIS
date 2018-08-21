@@ -46,18 +46,6 @@ print(URL_list)
 #for row in URL_list:
 def getURLlist(row):
 
-    #parse the URL for address city state instead of scraping
-    row_split = (row.split("/"))
-    full_address = row_split[6] + " " + row_split[5] + " " + row_split[4]
-    full_address = (full_address.replace("-", " "))
-    unparsed_address = row_split[6]
-    address = unparsed_address.replace("-", " ")
-    city = row_split[5]
-    state = row_split[4]
-
-    #for each URL, go to website, scrape data, obtain longitude latitute, then use that to obtain
-    #walkability, census information, census block data, and append to CSV write
-
     try:
         walk_score = np.nan
         walk_description = np.nan
@@ -66,10 +54,21 @@ def getURLlist(row):
         bike_score = np.nan
         bike_description = np.nan
 
+        # parse the URL for address city state instead of scraping
+        row_split = (row.split("/"))
+        full_address = row_split[6] + " " + row_split[5] + " " + row_split[4]
+        full_address = (full_address.replace("-", " "))
+        unparsed_address = row_split[6]
+        address = unparsed_address.replace("-", " ")
+        city = row_split[5]
+        state = row_split[4]
 
-#--------------------[SCRAPE THE URL}-------------------------------------------------------------
+        # for each URL, go to website, scrape data, obtain longitude latitute, then use that to obtain
+        # walkability, census information, census block data, and append to CSV write
 
+        #--------------------[SCRAPE THE URL}-------------------------------------------------------------
         page_scrape = urllib.request.urlopen(row)
+
 
         # parse the html using beautiful soup and store in variable `soup`
         soup = BeautifulSoup(page_scrape, 'html.parser')
@@ -174,7 +173,8 @@ def getURLlist(row):
             'benchmark': 'Public_AR_Current',
             'vintage': 'Current_Current',
             'address': full_address,
-            'format': 'json'
+            'format': 'json',
+            'key':'ec7ebde81a7a1772203e43dfed95a061d4c5118d'
         }
 
         # Do the request and get the response data
