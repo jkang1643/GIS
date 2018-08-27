@@ -6,8 +6,7 @@ import matplotlib.pyplot as plt
 import matplotlib
 
 
-
-with open("C:/Users/Joe/Documents/42Floors/2018-08-08_23_12_24/Houston()/houstonproperties_08_14_2018.csv", 'r', encoding='ISO-8859-1') as  f:
+with open("C:/Users/Joe/Documents/42Floors/2018-08-08_23_12_24/Houston()/houstonproperties_08_14_2018.csv", 'r', encoding='ISO-8859-1') as f:
     reader = csv.DictReader(f)
 
 # write latitude longitude in csv into shapefile, with properties
@@ -23,25 +22,35 @@ schema = {'geometry': 'Point',
                          },
 
           }
-with collection("Houston.shp", "w", "ESRI Shapefile", schema) as output:
-    with open('C:/Users/Joe/Documents/42Floors/2018-08-08_23_12_24/Houston()/houstonproperties_08_14_2018.csv', 'r',
-              encoding='ISO-8859-1') as f:
-        reader = csv.DictReader(f)
-        for row in reader:
-            point = Point(float(row['lon']), float(row['lat']))
-            output.write({
-                'properties': {
-                    'address': row['address'],
-                    'city': row['city'],
-                    'state': row['state'],
-                    'zipcode': row['zipcode'],
-                    'walkability': row['walkability'],
-                    'walkabilitydescription': row['walkabilitydescription'],
-                    'bikability': row['bikability'],
-                    'bikabilitydescription': row['bikabilitydescription'],
-                },  # add all the properties into the shapefile point!
-                'geometry': mapping(point)
-            })
+
+
+list = ['C:/Users/Joe/Documents/42Floors/2018-08-08_23_12_24/Dallas()/dallasproperties08_22_18.csv',
+        'C:/Users/Joe/Documents/42Floors/2018-08-08_23_12_24/San Antonio/sanantonioproperties.csv',
+       'C:/Users/Joe/Documents/42Floors/2018-08-08_23_12_24/Austin/austinproperties.csv',
+        'C:/Users/Joe/Documents/42Floors/2018-08-08_23_12_24/Houston()/houstonproperties_08_14_2018.csv']
+
+
+
+with collection("Texas.shp", "w", "ESRI Shapefile", schema) as output:
+    for x in list:
+        with open(x, 'r',
+                  encoding='ISO-8859-1') as f:
+            reader = csv.DictReader(f)
+            for row in reader:
+                point = Point(float(row['lon']), float(row['lat']))
+                output.write({
+                    'properties': {
+                        'address': row['address'],
+                        'city': row['city'],
+                        'state': row['state'],
+                        'zipcode': row['zipcode'],
+                        'walkability': row['walkability'],
+                        'walkabilitydescription': row['walkabilitydescription'],
+                        'bikability': row['bikability'],
+                        'bikabilitydescription': row['bikabilitydescription'],
+                    },  # add all the properties into the shapefile point!
+                    'geometry': mapping(point)
+                })
 
 
 realestatelocations = gp.GeoDataFrame.from_file(

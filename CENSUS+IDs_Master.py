@@ -3,7 +3,7 @@ import requests
 #INPUTS
 
 #1 = block level, 2 = tract level, 3 = zipcode, 4 = public area microdata, 5 = metropolitan area
-config = 5
+config = 4
 street = "371 Tealwood Dr."
 city = "Houston"
 state = "TX"
@@ -28,6 +28,7 @@ str = req.json()
 dictionary = (str['result']['addressMatches'])
 dictionary = (dictionary[0])
 dictionary_geo = (dictionary['geographies']['2010 Census Blocks'][0])
+
 
 #dictionary items
 latitude = (dictionary['coordinates']['x'])
@@ -123,11 +124,33 @@ microdata_area_name = str3["NAME"]
 #B25059_001E - estimate upper quartile rent
 
 web_scrape_url = ['https://api.census.gov/data/2016/acs/acs5?']
+get_statistics = ['NAME,'
+                  'B25001_001E,'    #total housing units
+                  'B25002_002E,'    #total occupied units
+                  'B25002_003E,'    #total vacant units
+                  'B25106_024E,'    #estimate total renter occupied housing units
+                  'B01003_001E,'    #total population in census tract
+                  'B01002_001E,'    #median age in tract
+                  'B08013_001E,'    #aggregate travel time to work
+                  'B15012_001E,'    #total fields of bachelers degrees reported
+                  'B19049_001E,'    #Median household income in the past 12 months (in 2016 inflation-adjusted dollars)
+                  'B19083_001E,'    #GINI index of income inequality
+                  'B25046_001E,'    #aggregate number of vehicles available
+                  'B25076_001E,'    #lower quartile house value
+                  'B25077_001E,'    #median house value
+                  'B25078_001E,'    #upper quartile house value
+                  'B25064_001E,'    #estimate median gross rent
+                  'B25057_001E,'    #estimate lower quartile rent
+                  'B25058_001E,'    #median contract rent
+                  'B25059_001E'     #estimate upper quartile rent
+    ]
+
+
 
 for x in web_scrape_url:
     #census tract level
     censusparams1 = {
-        'get': 'NAME,B25001_001E,B25002_002E,B25002_003E,B25106_024E,B01003_001E,B01002_001E,B08013_001E,B15012_001E,B19049_001E,B19083_001E,B25046_001E,B25076_001E,B25077_001E,B25078_001E,B25064_001E,B25057_001E,B25058_001E,B25059_001E',
+        'get': get_statistics,
         'for': 'tract:' + tract_id,
         'in': 'state:' + state_id + ' county:' + county_id,
         'key':'ec7ebde81a7a1772203e43dfed95a061d4c5118d'
@@ -135,7 +158,7 @@ for x in web_scrape_url:
 
     #census block level
     censusparams2 = {
-        'get': 'NAME,B25001_001E,B25002_002E,B25002_003E,B25106_024E,B01003_001E,B01002_001E,B08013_001E,B15012_001E,B19049_001E,B19083_001E,B25046_001E,B25076_001E,B25077_001E,B25078_001E,B25064_001E,B25057_001E,B25058_001E,B25059_001E',
+        'get': get_statistics,
         'for': 'block group:' + block_group,
         'in': 'state:' + state_id + ' county:' + county_id + ' tract:' + tract_id,
         'key':'ec7ebde81a7a1772203e43dfed95a061d4c5118d'
@@ -143,13 +166,13 @@ for x in web_scrape_url:
 
     #zipcode level
     censusparams3 = {
-        'get': 'NAME,B25001_001E,B25002_002E,B25002_003E,B25106_024E,B01003_001E,B01002_001E,B08013_001E,B15012_001E,B19049_001E,B19083_001E,B25046_001E,B25076_001E,B25077_001E,B25078_001E,B25064_001E,B25057_001E,B25058_001E,B25059_001E',
+        'get': get_statistics,
         'for': 'zip code tabulation area:' + zipcode,
         'key': 'ec7ebde81a7a1772203e43dfed95a061d4c5118d'
     }
     #public use microdata area
     censusparams4 = {
-        'get': 'NAME,B25001_001E,B25002_002E,B25002_003E,B25106_024E,B01003_001E,B01002_001E,B08013_001E,B15012_001E,B19049_001E,B19083_001E,B25046_001E,B25076_001E,B25077_001E,B25078_001E,B25064_001E,B25057_001E,B25058_001E,B25059_001E',
+        'get': get_statistics,
         'for': 'public use microdata area:' + microdata_id,
         'in': 'state:' + state_id,
         'key': 'ec7ebde81a7a1772203e43dfed95a061d4c5118d'
@@ -157,7 +180,7 @@ for x in web_scrape_url:
 
     # metropolitan statistical area
     censusparams5 = {
-        'get': 'NAME,B25001_001E,B25002_002E,B25002_003E,B25106_024E,B01003_001E,B01002_001E,B08013_001E,B15012_001E,B19049_001E,B19083_001E,B25046_001E,B25076_001E,B25077_001E,B25078_001E,B25064_001E,B25057_001E,B25058_001E,B25059_001E',
+        'get': get_statistics,
         'for': 'metropolitan statistical area/micropolitan statistical area:' + metropolitan_id,
         'key': 'ec7ebde81a7a1772203e43dfed95a061d4c5118d'
     }
@@ -176,11 +199,11 @@ for x in web_scrape_url:
         parameter = censusparams5
 
 
-
     # Do the request and get the response data
     req = requests.get(x, params=parameter)
     res = req.json()
     results = res[1]
+    print(results)
 
     #parse census results by numerical index
     census_name = results[0]

@@ -18,7 +18,7 @@ import time
 
 #opening the CSV and reading the columns
 #--------------------------------------------------------------------------------------
-CSV_location_file = 'C:/Users/Joe/Documents/42Floors/2018-08-08_23_12_24/Boston/listing_data.csv'
+CSV_location_file = 'C:/Users/Joe/Documents/42Floors/2018-08-08_23_12_24/Austin/listing_data.csv'
 
 with open(CSV_location_file, newline='', encoding="utf8") as f:
     reader = csv.reader(f)
@@ -26,7 +26,7 @@ with open(CSV_location_file, newline='', encoding="utf8") as f:
 #print(my_list)
 
 df = pd.read_csv(CSV_location_file)
-saved_column = df.listing_url
+saved_column = df.property_url
 
 URL_list = []
 
@@ -48,6 +48,19 @@ def getURLlist(row):
         transit_description = np.nan
         bike_score = np.nan
         bike_description = np.nan
+
+
+        # parse the URL for address city state instead of scraping
+        row_split = (row.split("/"))
+        full_address = row_split[6] + " " + row_split[5] + " " + row_split[4]
+        full_address = (full_address.replace("-", " "))
+        unparsed_address = row_split[6]
+        address = unparsed_address.replace("-", " ")
+        city = row_split[5]
+        state = row_split[4]
+
+
+
 
         page_scrape = urllib.request.urlopen(row)
 
@@ -77,6 +90,11 @@ def getURLlist(row):
                 property_type = re.compile('[\W_]+').sub(' ', propertytype_box.text)
         except:
             pass
+
+            # find original listing date
+        t = soup.find('span', {'class': 'text-nowrap text-bold'})
+        listing_date = t.text
+
 
 
         #(details box)
@@ -262,7 +280,7 @@ def getURLlist(row):
 
 
 
-        output = (latitude, longitude, geo_id, block_name, block_group, address, city, zipcode, state, walk_score,
+        output = (listing_date, latitude, longitude, geo_id, block_name, block_group, address, city, zipcode, state, walk_score,
                   walk_description, transit_score, transit_description, bike_score, bike_description, sqfoot,
                   listing_rate, property_type, details, floors, TotalSize, LotSize, ParkingRatio, YearConstructed, BuildingClass, Zoning, median_income, income_below_poverty, income_less_25,
                   income_between_25_and_50, income_between_50_and_100, income_between_100_and_200, income_greater_200,
@@ -271,9 +289,9 @@ def getURLlist(row):
         #------------------------------------------------------------------------------------------------
 #PRINTING AND EXPORTING
 
-        print(latitude, longitude, geo_id, block_name, block_group, address, city, state, zipcode, walk_score, walk_description, transit_score, transit_description, bike_score, bike_description, sqfoot, listing_rate, property_type, details, floors, TotalSize, LotSize, ParkingRatio, YearConstructed, BuildingClass, Zoning, median_income, income_below_poverty, income_less_25, income_between_25_and_50, income_between_50_and_100, income_between_100_and_200, income_greater_200, highschool_graduation_rate, college_education_rate, row)
+        print(listing_date, latitude, longitude, geo_id, block_name, block_group, address, city, state, zipcode, walk_score, walk_description, transit_score, transit_description, bike_score, bike_description, sqfoot, listing_rate, property_type, details, floors, TotalSize, LotSize, ParkingRatio, YearConstructed, BuildingClass, Zoning, median_income, income_below_poverty, income_less_25, income_between_25_and_50, income_between_50_and_100, income_between_100_and_200, income_greater_200, highschool_graduation_rate, college_education_rate, row)
 
-        with open('masterfile.csv', 'a', newline='') as csv_file:
+        with open('austinproperties.csv', 'a', newline='') as csv_file:
             writer = csv.writer(csv_file)
             writer.writerow(output)
 

@@ -24,7 +24,7 @@ import time
 
 #opening the CSV and reading the columns
 #--------------------------------------------------------------------------------------
-CSV_location_file = 'C:/Users/Joe/Documents/42Floors/2018-08-08_23_12_24/Boston/property_data.csv'
+CSV_location_file = 'C:/Users/Joe/Documents/42Floors/2018-08-08_23_12_24/Austin/property_data.csv'
 
 with open(CSV_location_file, newline='', encoding="utf8") as f:
     reader = csv.reader(f)
@@ -186,6 +186,7 @@ def getURLlist(row):
                     break
                 req = requests.get(web_scrape_url, params=params)
                 str = req.json()
+                print(str)
                 dictionary = (str['result']['addressMatches'])
                 dictionary = (dictionary[0])
                 dictionary_geo = (dictionary['geographies']['2010 Census Blocks'][0])
@@ -285,7 +286,7 @@ def getURLlist(row):
 
         print(listing_date, latitude, longitude, geo_id, block_name, block_group, address, city, state, zipcode, walk_score, walk_description, transit_score, transit_description, bike_score, bike_description, sqfoot, listing_rate, property_type, details, floors, TotalSize, LotSize, ParkingRatio, YearConstructed, BuildingClass, Zoning, median_income, income_below_poverty, income_less_25, income_between_25_and_50, income_between_50_and_100, income_between_100_and_200, income_greater_200, highschool_graduation_rate, college_education_rate, row)
 
-        with open('bostonproperties.csv', 'a', newline='') as csv_file:
+        with open('austinproperties.csv', 'a', newline='') as csv_file:
             writer = csv.writer(csv_file)
             writer.writerow(output)
 
