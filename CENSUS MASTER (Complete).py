@@ -14,8 +14,8 @@ import plotly.graph_objs as go
 
 #1 = block level, 2 = tract level, 3 = zipcode, 4 = public area microdata, 5 = metropolitan area
 config = 2
-street = "140 Commonwealth Ave."
-city = "Chestnut Hill"
+street = "35 Greycliff Rd"
+city = "Boston"
 state = "MA"
 
 
@@ -120,7 +120,7 @@ print(str3parse1)
 #------------------------------------------------------------------------------------------------------
 #--------------------------[CENSUS ACS 5 Community Survey Data]----------------------------------------
 
-
+#results[0:16]
 summary = ['NAME,'
           'B25001_001E,'    #total housing units
           'B25002_002E,'    #total occupied units
@@ -139,6 +139,7 @@ summary = ['NAME,'
           'B25059_001E'     #estimate upper quartile rent
     ]
 
+#results[19:67]
 demographics = ['B01001_002E,'    #Estimate!!Total!!Male   
                 'B01001_003E,'    #Male!!Under 5 years        
                 'B01001_004E,'    #Male!!5 to 9 years
@@ -189,6 +190,7 @@ demographics = ['B01001_002E,'    #Estimate!!Total!!Male
                 'B01001_049E'    #Female!!85 years and over
     ]
 
+#results[70:79]
 race = ['B01001H_001E,'     #white
         'B01001I_001E,'     #hispanic
         'B01001B_001E,'     #black
@@ -196,10 +198,11 @@ race = ['B01001H_001E,'     #white
         'B01001C_001E,'     #native american/alaska native
         'B01001E_001E,'     #native hawaiian/pacific islander
         'B01001F_001E,'     #other
-        'B01003_001E,'      #total population
+        'B01001G_001E,'      #two or more races
         'B02001_001E'       #total race
         ]
 
+#results[82:123]
 ethnicity1 = ['B04006_001E,'    #Total Reporting Ancestry
              'B04006_002E,'     #Afghan
              'B04006_003E,'     #Albanian
@@ -243,6 +246,7 @@ ethnicity1 = ['B04006_001E,'    #Total Reporting Ancestry
              'B04006_050E'      #Israeli
         ]
 
+#results[126:156]
 ethnicity2 = ['B04006_051E,'    #Italian
               'B04006_052E,'    #Latvian
               'B04006_053E,'    #Lithuanian
@@ -275,10 +279,12 @@ ethnicity2 = ['B04006_051E,'    #Italian
               'B04006_108E'     #Estimate Other
 ]
 
+#results[159:161]
 foreign_native = ['B05012_002E,'    #Native
                   'B05012_003E'     #Foreign Born
                   ]
 
+#results[164:170]
 relationship = ['B06008_001E,'  #Total Count
                 'B06008_002E,'  #Single/Never Married
                 'B06008_003E,'  #Currently Married
@@ -287,6 +293,7 @@ relationship = ['B06008_001E,'  #Total Count
                 'B06008_006E'   #Widowed
                 ]
 
+#results[173:179]
 education = ['B06009_001E,'     #Total
              'B06009_002E,'     #Less Than High School Graduate
              'B06009_003E,'     #High School Graduate
@@ -295,6 +302,7 @@ education = ['B06009_001E,'     #Total
              'B06009_006E'     #Graduate or professional degree
              ]
 
+#results[182:192]
 transportation = ['B08301_001E,'    #Total Means of Transportation
                   'B08301_003E,'    #Car, Van, Truck, Drove Alone
                   'B08301_004E,'    #Car, Van, Truck, Carpooled
@@ -307,6 +315,7 @@ transportation = ['B08301_001E,'    #Total Means of Transportation
                   'B08301_021E'     #Worked at Home
                   ]
 
+#results[195:210]
 work = ['B08011_001E,'     #Total
              'B08011_002E,'     #12:00 a.m. to 4:59 a.m
              'B08011_003E,'     #5:00 a.m. to 5:29 a.m.
@@ -324,6 +333,7 @@ work = ['B08011_001E,'     #Total
              'B08011_015E'     #4:00 p.m. to 11:59 p.m.
 ]
 
+#results[213:226]
 travel_time = ['B08012_001E,'     #Total
              'B08012_002E,'     #Less than 5 minutes
              'B08012_003E,'     #5 to 9 minutes
@@ -339,6 +349,7 @@ travel_time = ['B08012_001E,'     #Total
              'B08012_013E'      #!90 or more minutes
 ]
 
+#results[229:236]
 vehicles = ['B08014_001E,'      #Total
             'B08014_002E,'      #No Vehicles
             'B08014_003E,'      #1 Vehicle 
@@ -348,6 +359,7 @@ vehicles = ['B08014_001E,'      #Total
             'B08014_007E'       #5 or more Vehicles
             ]
 
+#results[239:248]
 worker_class = ['B08128_001E,'  #Total Worker Class
                 'B08128_002E,'  #Employee of private company workers
                 'B08128_003E,'  #Self-employed in own incorporated business workers
@@ -359,6 +371,7 @@ worker_class = ['B08128_001E,'  #Total Worker Class
                 'B08128_010E'  #Unpaid family workers
                 ]
 
+#results[251:261]
 under18 = ['B08301_021E,'       #Total
            'B09001_002E,'       #Total In Households
            'B09001_003E,'       #Households, Under 3
@@ -371,6 +384,7 @@ under18 = ['B08301_021E,'       #Total
            'B09001_010E'        #In Group Quarters
            ]
 
+#results[264:272]
 school_enrollment = ['B14001_002E,'     #Total Enrolled in School
                      'B14001_003E,'     #Nursery School/Preschool
                      'B14001_004E,'     #Enrolled in kindergarten
@@ -381,6 +395,7 @@ school_enrollment = ['B14001_002E,'     #Total Enrolled in School
                      'B14001_009E'      #Enrolled in Graduate School
                      ]
 
+#results[275:291]
 bachelors_field_study = ['B15012_001E,'     #Total
                          'B15012_002E,'     #Computers, Mathematics and Statistics
                          'B15012_003E,'     #Biological, Agricultural, and Environmental Sciences
@@ -399,8 +414,9 @@ bachelors_field_study = ['B15012_001E,'     #Total
                          'B15012_016E'      #Other
                          ]
 
+#results[294:301]
 nativity_language = ['B16005_001E,'     #Estimate 
-                     'B16005_002E,'      #Native
+                     'B16005_002E,'     #Native
                      'B16005_003E,'     #Speak Only English
                      'B16005_004E,'     #Speak Spanish 
                      'B16005_009E,'     #Speak Indo-European Languages
@@ -408,6 +424,7 @@ nativity_language = ['B16005_001E,'     #Estimate
                      'B16005_019E'      #Speak Other Language
 ]
 
+#results[304:320]
 household_income_past_12 = ['B19001_002E,'      #Less than $10,000
                     'B19001_003E,'      #$10,000 to $14,999
                     'B19001_004E,'      #15,000 to $19,999
@@ -426,6 +443,7 @@ household_income_past_12 = ['B19001_002E,'      #Less than $10,000
                     'B19001_017E'       #$200,000 or more
                     ]
 
+#results[323:334]
 earnings_type = ['B19051_001E,'     #Total Earnings Type
                  'B19051_002E,'     #Total With Earnings
                  'B19052_002E,'     #Wage Earnings
@@ -439,6 +457,7 @@ earnings_type = ['B19051_001E,'     #Total Earnings Type
                  'B19060_002E'     #With Other Types of Income
                  ]
 
+#results[337:354]
 family_income = ['B19101_001E,'     #Estimate!!Total
                  'B19101_002E,'     #Less than $10,000
                  'B19101_003E,'     #$10,000 to $14,999
@@ -458,6 +477,7 @@ family_income = ['B19101_001E,'     #Estimate!!Total
                  'B19101_017E'      #!$200,000 or more
                  ]
 
+#results[357:371]
 language_home = ['C16001_001E,'     #Language Spoken At Home
                  'C16001_002E,'     #Speak only English
                  'C16001_003E,'     #Speak Spanish
@@ -474,6 +494,7 @@ language_home = ['C16001_001E,'     #Language Spoken At Home
                  'C16001_036E'     #Other Unspecified Language
                  ]
 
+#results[374:405]
 occupation_median_earnings = ['B24011_001E,'        #Estimate Total
                               'B24011_003E,'        #Management, business, and financial occupations
                               'B24011_004E,'        #Management occupations
@@ -507,6 +528,7 @@ occupation_median_earnings = ['B24011_001E,'        #Estimate Total
                               'B24011_036E'        #Material moving occupations
                               ]
 
+#results[408:422]
 occupation = ['C24050_002E,'    #Agriculture, forestry, fishing and hunting, and mining
               'C24050_003E,'    #Construction
               'C24050_004E,'    #Manufacturing
@@ -523,14 +545,17 @@ occupation = ['C24050_002E,'    #Agriculture, forestry, fishing and hunting, and
               'C24050_001E'     #Total
               ]
 
+#results[425:427]
 occupancy_status = ['B25002_002E,'      #Total Occupied
                     'B25002_003E'       #Total Vacant
                     ]
 
+#results[430:432]
 tenure_status = ['B25003_002E,'     #Owner occupied
                  'B25003_003E'     #Renter occupied
                  ]
 
+#results[435:443]
 vacancy_status = ['B25004_001E,'    #Total Vacancy Status
                   'B25004_002E,'    #For Rent
                   'B25004_003E,'    #Rented, Not Occupied
@@ -541,6 +566,7 @@ vacancy_status = ['B25004_001E,'    #Total Vacancy Status
                   'B25004_008E'     #Other vacant
                   ]
 
+#results[446:467]
 householder_age = ['B25007_001E,'       #Total occupied
                    'B25007_002E,'       #Owner occupied
                    'B25007_003E,'       #Owner occupied!!Householder 15 to 24 years
@@ -564,6 +590,7 @@ householder_age = ['B25007_001E,'       #Total occupied
                    'B25007_021E'       #Renter occupied!!Householder 85 years and over
                              ]
 
+#results[470:487]
 household_size = ['B25009_001E,'    #Total
                   'B25009_002E,'    #Total Owner Occupied
                   'B25009_003E,'    #Owner Occupied, 1 Person Household
@@ -583,6 +610,7 @@ household_size = ['B25009_001E,'    #Total
                   'B25009_017E'    #Renter occupied!!7-or-more person household
                   ]
 
+#results[490:520]
 contract_rent = ['B25056_001E,'     #Total
                  'B25056_002E,'     #With Cash Rent
                  'B25056_027E,'     #No Cash Rent
@@ -615,6 +643,7 @@ contract_rent = ['B25056_001E,'     #Total
                  'B25059_001E'     #Upper contract rent quartile
                  ]
 
+#results[523:548]
 rent_asked = ['B25061_001E,'    #Total
               'B25061_002E,'    #Less than $100
               'B25061_003E,'    #$100 to $149
@@ -642,10 +671,259 @@ rent_asked = ['B25061_001E,'    #Total
               'B25061_025E'    #$3,500 or more
               ]
 
+#results[551:580]
+house_value = ['B25075_002E,'   #Less than $10,000
+               'B25075_003E,'   #$10,000 to $14,999
+               'B25075_004E,'   #$15,000 to $19,999
+               'B25075_005E,'   #$20,000 to $24,999
+               'B25075_006E,'   #$25,000 to $29,999
+               'B25075_007E,'   #$30,000 to $34,999
+               'B25075_008E,'   #$35,000 to $39,999
+               'B25075_009E,'   #$40,000 to $49,999
+               'B25075_010E,'   #$50,000 to $59,999
+               'B25075_011E,'   #$60,000 to $69,999
+               'B25075_012E,'   #$70,000 to $79,999
+               'B25075_013E,'   #$80,000 to $89,999
+               'B25075_014E,'   #$90,000 to $99,999
+               'B25075_015E,'   #$100,000 to $124,999
+               'B25075_016E,'   #$125,000 to $149,999
+               'B25075_017E,'   #$150,000 to $174,999
+               'B25075_018E,'   #$175,000 to $199,999
+               'B25075_019E,'   #$200,000 to $249,999
+               'B25075_020E,'   #$250,000 to $299,999
+               'B25075_021E,'   #$300,000 to $399,999
+               'B25075_022E,'   #$400,000 to $499,999
+               'B25075_023E,'   #$500,000 to $749,999
+               'B25075_024E,'   #$750,000 to $999,999
+               'B25075_025E,'   #$1,000,000 to $1,499,999
+               'B25075_026E,'   #$1,500,000 to $1,999,999
+               'B25075_027E,'   #$2,000,000 or more
+               'B25076_001E,'   #lower value quartile (dollars)
+               'B25077_001E,'   #Median value (dollars)
+               'B25078_001E'   #Upper value quartile (dollars)
+               ]
+
+#results[583:609]
+price_asked = ['B25085_002E,'   #Less than $10,000
+               'B25085_003E,'   #$10,000 to $14,999
+               'B25085_004E,'   #$15,000 to $19,999
+               'B25085_005E,'   #$20,000 to $24,999
+               'B25085_006E,'   #$25,000 to $29,999
+               'B25085_007E,'   #$30,000 to $34,999
+               'B25085_008E,'   #$35,000 to $39,999
+               'B25085_009E,'   #$40,000 to $49,999
+               'B25085_010E,'   #$50,000 to $59,999
+               'B25085_011E,'   #$60,000 to $69,999
+               'B25085_012E,'   #$70,000 to $79,999
+               'B25085_013E,'   #$80,000 to $89,999
+               'B25085_014E,'   #$90,000 to $99,999
+               'B25085_015E,'   #$100,000 to $124,999
+               'B25085_016E,'   #$125,000 to $149,999
+               'B25085_017E,'   #$150,000 to $174,999
+               'B25085_018E,'   #$175,000 to $199,999
+               'B25085_019E,'   #$200,000 to $249,999
+               'B25085_020E,'   #$250,000 to $299,999
+               'B25085_021E,'   #$300,000 to $399,999
+               'B25085_022E,'   #$400,000 to $499,999
+               'B25085_023E,'   #$500,000 to $749,999
+               'B25085_024E,'   #$750,000 to $999,999
+               'B25085_025E,'   #$1,000,000 to $1,499,999
+               'B25085_026E,'   #$1,500,000 to $1,999,999
+               'B25085_027E'   #$2,000,000 or more
+               ]
+
+#results[612:620]
+mortgage_status = ['B25081_001E,'   #Total Mortgage Status
+                   'B25081_002E,'   #Housing units with a mortgage, contract to purchase, or similar debt
+                   'B25081_003E,'   #With either a second mortgage or home equity loan, but not both
+                   'B25081_004E,'   #Second mortgage only
+                   'B25081_005E,'   #Home equity loan only
+                   'B25081_006E,'   #Both second mortgage and home equity loan
+                   'B25081_007E,'   #No second mortgage and no home equity loan
+                   'B25081_008E'    #Housing units without a mortgage
+                   ]
+
+#results[623:641]
+monthly_owner_costs = ['B25094_001E,'   #selected monthly costs
+                       'B25094_002E,'   #Less than $200
+                       'B25094_003E,'   #$200 to $299
+                       'B25094_004E,'   #$300 to $399
+                       'B25094_005E,'   #$400 to $499
+                       'B25094_006E,'   #$500 to $599
+                       'B25094_007E,'   #$600 to $699
+                       'B25094_008E,'   #$700 to $799
+                       'B25094_009E,'   #$800 to $899
+                       'B25094_010E,'   #$900 to $999
+                       'B25094_011E,'   #$1,000 to $1,249
+                       'B25094_012E,'   #$1,250 to $1,499
+                       'B25094_013E,'   #$1,500 to $1,999
+                       'B25094_014E,'   #$2,000 to $2,499
+                       'B25094_015E,'   #$2,500 to $2,999
+                       'B25094_016E,'   #$3,000 to $3,499
+                       'B25094_017E,'   #$3,500 to $3,999
+                       'B25094_018E'    #$4,000 or more
+                           ]
+
+#results[644:662]
+total_housing_costs = ['B25104_001E,'   #Estimate!!Total
+                       'B25104_002E,'   #Less than $100
+                       'B25104_003E,'   #$100 to $199
+                       'B25104_004E,'   #$200 to $299
+                       'B25104_005E,'   #$300 to $399
+                       'B25104_006E,'   #$400 to $499
+                       'B25104_007E,'   #$500 to $599
+                       'B25104_008E,'   #$600 to $699
+                       'B25104_009E,'   #$700 to $799
+                       'B25104_010E,'   #$800 to $899
+                       'B25104_011E,'   #$900 to $999
+                       'B25104_012E,'   #$1,000 to $1,499
+                       'B25104_013E,'   #$1,500 to $1,999
+                       'B25104_014E,'   #$2,000 to $2,499
+                       'B25104_015E,'   #$2,500 to $2,999
+                       'B25104_016E,'   #$3,000 or more
+                       'B25104_017E,'   #No cash rent
+                       'B25105_001E'   #Median monthly housing costs
+                       ]
+
+#results[665:682]
+taxes_paid = ['B25102_002E,'    #Total With A Mortgage
+              'B25102_003E,'    #With a mortgage, Less than $800
+              'B25102_004E,'    #With a mortgage, $800 to $1,499
+              'B25102_005E,'    #With a mortgage, $1,500 to $1,999
+              'B25102_006E,'    #With a mortgage, $2,000 to $2,999
+              'B25102_007E,'    #With a mortgage, $3,000 or more
+              'B25102_008E,'    #With a mortgage, No real estate taxes paid
+              'B25102_009E,'    #Not mortgaged
+              'B25102_010E,'    #Not mortgaged, Less than $800
+              'B25102_011E,'    #Not mortgaged!!$800 to $1,499
+              'B25102_012E,'    #Not mortgaged!!$1,500 to $1,999
+              'B25102_013E,'    #Not mortgaged!!$2,000 to $2,999
+              'B25102_014E,'    #Not mortgaged!!$3,000 or more
+              'B25102_015E,'    #No real estate taxes paid
+              'B25103_001E,'    #Median real estate taxes paid!!Total
+              'B25103_002E,'    #Median real estate taxes paid for units with a mortgage
+              'B25103_003E'    #Median real estate taxes paid for units without a mortgage
+              ]
+
+#results[685:692]
+bedrooms = ['B25041_001E,'      #Bedrooms Total
+            'B25041_002E,'      #No bedroom
+            'B25041_003E,'      #1 bedroom
+            'B25041_004E,'      #2 bedrooms
+            'B25041_005E,'      #3 bedrooms
+            'B25041_006E,'      #4 bedrooms
+            'B25041_007E'      #5 or more bedrooms
+            ]
+
+#results[695:706]
+year_structure_built = ['B25034_002E,'      #Built 2014 or later
+                        'B25034_003E,'      #Built 2010 to 2013
+                        'B25034_004E,'      #Built 2000 to 2009
+                        'B25034_005E,'      #Built 1990 to 1999
+                        'B25034_006E,'      #Built 1980 to 1989
+                        'B25034_007E,'      #Built 1970 to 1979
+                        'B25034_008E,'      #Built 1960 to 1969
+                        'B25034_009E,'      #Built 1950 to 1959
+                        'B25034_010E,'      #Built 1940 to 1949
+                        'B25034_011E,'      #Built 1939 or earlier
+                        'B25035_001E'      #Median year structure built
+                        ]
+
+#results[709:732]
+units_in_structure = ['B25032_001E,'        #Total Units in Structure
+                      'B25032_002E,'        #Owner-occupied housing units
+                      'B25032_003E,'        #Owner-occupied housing units!!1, detached
+                      'B25032_004E,'        #Owner-occupied housing units!!1, attached
+                      'B25032_005E,'        #Owner-occupied housing units!!2
+                      'B25032_006E,'        #Owner-occupied housing units!!3 or 4
+                      'B25032_007E,'        #Owner-occupied housing units!!5 to 9
+                      'B25032_008E,'        #Owner-occupied housing units!!10 to 19
+                      'B25032_009E,'        #Owner-occupied housing units!!20 to 49
+                      'B25032_010E,'        #Owner-occupied housing units!!50 or more
+                      'B25032_011E,'        #Owner-occupied housing units!!Mobile home
+                      'B25032_012E,'        #Owner-occupied housing units!!Boat, RV, van, etc.
+                      'B25032_013E,'        #Renter-occupied housing units
+                      'B25032_014E,'        #Renter-occupied housing units!!1, detached
+                      'B25032_015E,'        #Renter-occupied housing units!!1, attached
+                      'B25032_016E,'        #Renter-occupied housing units!!2
+                      'B25032_017E,'        #Renter-occupied housing units!!3 or 4
+                      'B25032_018E,'        #Renter-occupied housing units!!5 to 9
+                      'B25032_019E,'        #Renter-occupied housing units!!10 to 19
+                      'B25032_020E,'        #Renter-occupied housing units!!20 to 49
+                      'B25032_021E,'        #Renter-occupied housing units!!50 or more
+                      'B25032_022E,'        #!Renter-occupied housing units!!Mobile home
+                      'B25032_023E'        #Renter-occupied housing units!!Boat, RV, van, etc.
+                      ]
+
+#results[735:785]
+other_race1 = ['B02017_002E,'  #American Indian Ancestry
+               'B02017_046E,'  #Alaskan Native Ancestry
+               'B02018_002E,'  # Asian Indian
+               'B02018_003E,'  # Bangladeshi
+               'B02018_004E,'  # Bhutanese
+               'B02018_005E,'  # Burmese
+               'B02018_006E,'  # Cambodian
+               'B02018_007E,'  # Chinese, except Taiwanese
+               'B02018_008E,'  # Filipino
+               'B02018_009E,'  # Hmong
+               'B02018_010E,'  # Indonesian
+               'B02018_011E,'  # Japanese
+               'B02018_012E,'  # Korean
+               'B02018_013E,'  # Laotian
+               'B02018_014E,'  # Malaysian
+               'B02018_015E,'  # Mongolian
+               'B02018_016E,'  # Nepalese
+               'B02018_017E,'  # Okinawan
+               'B02018_018E,'  # Pakistani
+               'B02018_019E,'  # Sri Lankan
+               'B02018_020E,'  # Taiwanese
+               'B02018_021E,'  # Thai
+               'B02018_022E,'  # Vietnamese
+               'B02018_023E,'  # Other Asian Specified
+               'B02018_024E,'  # Other Asian, not specified
+               'B02019_002E,'  # Native Hawaiian
+               'B02019_003E,'  # Samoan
+               'B02019_004E,'  # Tongan
+               'B02019_005E,'  # Other Polynesian
+               'B02019_006E,'  # Guamanian or Chamorro
+               'B02019_007E,'  # Marshallese
+               'B02019_008E,'  # Other Micronesian
+               'B02019_009E,'  # Fijian
+               'B02019_010E,'  # Other Melanesian
+               'B03001_004E,'  # Mexican
+               'B03001_005E,'  # Puerto Rican
+               'B03001_006E,'  # Cuban
+               'B03001_007E,'  # Dominican (Dominican Republic)
+               'B03001_009E,'  # Costa Rican
+               'B03001_010E,'  # Guatemalan
+               'B03001_011E,'  # Honduran
+               'B03001_012E,'  # Nicaraguan
+               'B03001_013E,'  # Panamanian
+               'B03001_014E,'  # Salvadoran
+               'B03001_015E,'  # Other Central American
+               'B03001_017E,'  # Argentinean
+               'B03001_018E,'  # Bolivian
+               'B03001_019E,'  # Chilean
+               'B03001_020E,'  # Colombian
+               'B03001_021E'  # Ecuadorian
+               ]
+
+#results[788:797]
+other_race2 = ['B03001_022E,'   #Paraguayan
+               'B03001_023E,'   #Peruvian
+               'B03001_024E,'   #Uruguayan
+               'B03001_025E,'   #Venezuelan
+               'B03001_026E,'   #Other South American
+               'B03001_027E,'   #Other Hispanic or Latino
+               'B03001_029E,'   #Spanish
+               'B03001_028E,'   #Spaniard
+               'B03001_030E'    #Spanish American
+               ]
 
 
 
 #----------------------------------------------------------------------------------------------------
+
 
 #ACS 2016 Community Survey - Detailed Tables
 
@@ -661,7 +939,9 @@ list = [summary, demographics, race, ethnicity1, ethnicity2, foreign_native, rel
         transportation, work, travel_time, vehicles, worker_class, under18,
         school_enrollment, bachelors_field_study, nativity_language, household_income_past_12,
         earnings_type, family_income, language_home, occupation_median_earnings, occupation,
-        occupancy_status, vacancy_status, householder_age, household_size, contract_rent, rent_asked]
+        occupancy_status, tenure_status, vacancy_status, householder_age, household_size, contract_rent, rent_asked,
+        house_value, price_asked, mortgage_status, monthly_owner_costs, total_housing_costs, taxes_paid,
+        bedrooms, year_structure_built, units_in_structure, other_race1, other_race2]
 
 
 
@@ -722,7 +1002,6 @@ for x in list:
 
     # Do the request and get the response data
     req = requests.get('https://api.census.gov/data/2016/acs/acs5?', params=parameter)
-    print(req)
     res = req.json()
     preresults = res[1]
     #preresults as a result of for-loops to acquire data
@@ -731,18 +1010,12 @@ for x in list:
     for y in preresults:
         results.append(y)
 
-print(results)
-
-
-
+print(results[735:785])
 #----------------------------------[CREATING PANDA DATAFRAMES]--------------------------------------------------
 
 
 
-male_age_distribution_values = results[2:25]
-
-
-
+male_age_distribution_values = results[20:43]
 male_age_distribution_keys = ["Under 5 years",
                               "5 to 9 years",
                               "10 to 14 years",
@@ -771,8 +1044,7 @@ male_age_distribution_keys = ["Under 5 years",
 #
 male_age_distribution = dict(zip(male_age_distribution_keys, male_age_distribution_values))
 #convert to pandas data series
-df = pd.Series(male_age_distribution)
-
+MALE_AGE_DISTRIBUTION = pd.Series(male_age_distribution)
 
 
 #----------------------------------[PANDA SERIES]-----------------------------------------------------
@@ -802,19 +1074,82 @@ female_age_distribution_keys = ["Under 5 years",
                               "85 years and over"
                               ]
 
-female_age_distribution_values = results[26:49]
+female_age_distribution_values = results[44:67]
 
 #create python dictionary
 female_age_distribution = dict(zip(female_age_distribution_keys, female_age_distribution_values))
+
 #convert to pandas data series
-df2 = pd.Series(female_age_distribution)
+FEMALE_AGE_DISTRIBUTION = pd.Series(female_age_distribution)
 
-dfnew = pd.to_numeric(df, errors='raise', downcast=None)
-df2new = pd.to_numeric(df2, errors='raise', downcast=None)
 
-df3 = dfnew.add(df2new)
+#-----------------------------------------------------------------------------------------------------
+
+
+#Total Age Distribution
+
+dfnew = pd.to_numeric(MALE_AGE_DISTRIBUTION, errors='raise', downcast=None)
+df2new = pd.to_numeric(FEMALE_AGE_DISTRIBUTION, errors='raise', downcast=None)
+
+TOTAL_AGE_DISTRIBUTION = dfnew.add(df2new)
+
+print(TOTAL_AGE_DISTRIBUTION)
+#---------------------------------------------------------------------------------------------------------
+
+
+race_values = results[70:78]
+race_keys = ['White',
+             'Hispanic',
+             'Black',
+             'Asian',
+             'Native American/Alaskan Native',
+             'Native Hawaiian/Pacific Islander',
+             'Other',
+             'Two or More Races'
+             ]
+race = dict(zip(race_keys, race_values))
+RACE = pd.Series(race)
+
+print(RACE)
+
 
 #---------------------------------------------------------------------------------------------------------
+
+
+ethnicity1_values = results[82:123]
+ethnicity2_values = results[126:156]
+
+ethnicity_values = ethnicity1_values + ethnicity2_values
+
+print(ethnicity_values)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 #labels = ['Men', 'Women']
 #values = [results[25], results[1]]
@@ -825,6 +1160,6 @@ df3 = dfnew.add(df2new)
 
 #-------------------------------------------[plot online]-----------------------------------------------------------------------------------------
 
-#df.iplot(kind='bar', yTitle='Male Age Distribution', title="Male Age Distribution")
-#df2.iplot(kind='bar', yTitle='Female Age Distribution', title="Female Age Distribution")
-#df3.iplot(kind='bar', yTitle='Total Age Distribution', title="Total Age Distribution")
+#MALE_AGE_DISTRIBUTION.iplot(kind='bar', yTitle='Male Age Distribution', title="Male Age Distribution")
+#FEMALE_AGE_DISTRIBUTION.iplot(kind='bar', yTitle='Female Age Distribution', title="Female Age Distribution")
+#TOTAL_AGE_DISTRIBUTION.iplot(kind='bar', yTitle='Total Age Distribution', title="Total Age Distribution")
