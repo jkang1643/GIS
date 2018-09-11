@@ -1,12 +1,14 @@
 import requests
+import pandas as pd
 #--------------------------------------------------------------------------------------------------
 #INPUTS
 
 #1 = block level, 2 = tract level, 3 = zipcode, 4 = public area microdata, 5 = metropolitan area
-config = 4
-street = "371 Tealwood Dr."
-city = "Houston"
-state = "TX"
+config = 2
+street = "140 Commonwealth Ave
+city = "La Quinta"
+state = "California"
+
 
 
 #get GEOCODE Data, latitude, longitude, tract, block level census data
@@ -24,7 +26,9 @@ params = {
 
 # Do the request and get the response data
 req = requests.get(web_scrape_url, params=params)
+print(req)
 str = req.json()
+print(str)
 dictionary = (str['result']['addressMatches'])
 dictionary = (dictionary[0])
 dictionary_geo = (dictionary['geographies']['2010 Census Blocks'][0])
@@ -50,6 +54,7 @@ tract_id = (dictionary_geo['TRACT'])
 #get Metropolitcan Statististical Area Code
 
 web_scrape_url2 = 'https://geocoding.geo.census.gov/geocoder/geographies/address?'
+
 params2 = {
     'benchmark': 'Public_AR_Current',
     'vintage': 'Current_Current',
@@ -73,6 +78,7 @@ str2 = dict(str2['geographies']['Metropolitan Statistical Areas'][0])
 #assign variables to dict
 msa_Name = str2["NAME"]
 metropolitan_id = str2["CBSA"]
+
 #-------------------------------------------------------------------------------------------------
 
 #Get 2010 Census Public Use Microdata Areas
@@ -143,9 +149,11 @@ get_statistics = ['NAME,'
                   'B25057_001E,'    #estimate lower quartile rent
                   'B25058_001E,'    #median contract rent
                   'B25059_001E'     #estimate upper quartile rent
+                  ''
     ]
 
 
+#this part of the code requires different census calls to get information
 
 for x in web_scrape_url:
     #census tract level
@@ -186,6 +194,7 @@ for x in web_scrape_url:
     }
 
 
+
     #configure which region to use
     if config == 1:
         parameter = censusparams2
@@ -199,11 +208,15 @@ for x in web_scrape_url:
         parameter = censusparams5
 
 
+
     # Do the request and get the response data
     req = requests.get(x, params=parameter)
+    print(req)
     res = req.json()
     results = res[1]
     print(results)
+
+
 
     #parse census results by numerical index
     census_name = results[0]

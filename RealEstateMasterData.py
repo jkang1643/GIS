@@ -13,6 +13,7 @@ import os
 import sys
 import time
 
+
 #downloading all CSV files from 42 floors and saving the name as the retrieve date
 #-----------------------------------------------------------------------------------
 
@@ -116,6 +117,8 @@ def getURLlist(row):
         city = re.sub('([A-Z])', r' \1', city)[1:]
 
         print(address, city, state)
+
+
 #obtain longitude latitude coordinates for each data point
 #---------------------------------------------------------------------------------------
         web_scrape_url = 'https://geocoding.geo.census.gov/geocoder/geographies/address?'
