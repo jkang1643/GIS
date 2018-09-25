@@ -8,14 +8,15 @@ import plotly.plotly as py
 import plotly.graph_objs as go
 
 #--------------------------------------------------------------------------------------------------
-
+#------------------------------------------------------------------------------------------------
+#------------------------------
 #INPUTS
 
 
 #1 = block level, 2 = tract level, 3 = zipcode, 4 = public area microdata, 5 = metropolitan area
 config = 2
-street = "35 Greycliff Rd"
-city = "Boston"
+street = "140 Commonwealth Ave."
+city = "Chestnut Hill"
 state = "MA"
 
 
@@ -198,7 +199,7 @@ race = ['B01001H_001E,'     #white
         'B01001C_001E,'     #native american/alaska native
         'B01001E_001E,'     #native hawaiian/pacific islander
         'B01001F_001E,'     #other
-        'B01001G_001E,'      #two or more races
+        'B01001G_001E,'     #two or more races
         'B02001_001E'       #total race
         ]
 
@@ -299,7 +300,7 @@ education = ['B06009_001E,'     #Total
              'B06009_003E,'     #High School Graduate
              'B06009_004E,'     #Some College/Associates 
              'B06009_005E,'     #Bachelors Degree
-             'B06009_006E'     #Graduate or professional degree
+             'B06009_006E'      #Graduate or professional degree
              ]
 
 #results[182:192]
@@ -361,8 +362,8 @@ vehicles = ['B08014_001E,'      #Total
 
 #results[239:248]
 worker_class = ['B08128_001E,'  #Total Worker Class
-                'B08128_002E,'  #Employee of private company workers
-                'B08128_003E,'  #Self-employed in own incorporated business workers
+                'B08128_003E,'  #Employee of private company workers
+                'B08128_004E,'  #Self-employed in own incorporated business workers
                 'B08128_005E,'  #Private not-for-profit wage and salary workers
                 'B08128_006E,'  #Local Government Workers
                 'B08128_007E,'  #State Government workers
@@ -566,6 +567,7 @@ vacancy_status = ['B25004_001E,'    #Total Vacancy Status
                   'B25004_008E'     #Other vacant
                   ]
 
+
 #results[446:467]
 householder_age = ['B25007_001E,'       #Total occupied
                    'B25007_002E,'       #Owner occupied
@@ -729,7 +731,7 @@ price_asked = ['B25085_002E,'   #Less than $10,000
                'B25085_024E,'   #$750,000 to $999,999
                'B25085_025E,'   #$1,000,000 to $1,499,999
                'B25085_026E,'   #$1,500,000 to $1,999,999
-               'B25085_027E'   #$2,000,000 or more
+               'B25085_027E'    #$2,000,000 or more
                ]
 
 #results[612:620]
@@ -908,6 +910,7 @@ other_race1 = ['B02017_002E,'  #American Indian Ancestry
                'B03001_021E'  # Ecuadorian
                ]
 
+
 #results[788:797]
 other_race2 = ['B03001_022E,'   #Paraguayan
                'B03001_023E,'   #Peruvian
@@ -919,6 +922,66 @@ other_race2 = ['B03001_022E,'   #Paraguayan
                'B03001_028E,'   #Spaniard
                'B03001_030E'    #Spanish American
                ]
+
+#results[800:820]
+detailed_occupation_male = ['C24030_002E,'   #Total Male
+                            'C24030_004E,'   #Agriculture, forestry, fishing and hunting
+                            'C24030_005E,'   #Mining, quarrying, and oil and gas extraction
+                            'C24030_006E,'   #Construction
+                            'C24030_007E,'   #Manufacturing
+                            'C24030_008E,'   #Wholesale trade
+                            'C24030_009E,'   #Retail trade
+                            'C24030_011E,'   #Transportation and warehousing
+                            'C24030_012E,'   #Utilities
+                            'C24030_013E,'   #Information
+                            'C24030_015E,'   #Finance and insurance
+                            'C24030_016E,'   #Real estate and rental and leasing
+                            'C24030_018E,'   #Professional, scientific, and technical services
+                            'C24030_019E,'   #Management of companies and enterprises
+                            'C24030_020E,'   #Administrative and support and waste management services
+                            'C24030_022E,'   #Educational services
+                            'C24030_023E,'   #Health care and social assistance
+                            'C24030_025E,'   #Arts, entertainment, and recreation
+                            'C24030_026E,'   #Accommodation and food services
+                            'C24030_027E,'   #Other services
+                            'C24030_028E'    #Public administration
+               ]
+
+
+#results[824:844]
+detailed_occupation_female = ['C24030_029E,'   #Total Female
+                              'C24030_031E,'   #Agriculture, forestry, fishing and hunting
+                              'C24030_032E,'   #Mining, quarrying, and oil and gas extraction
+                              'C24030_033E,'   #Construction
+                              'C24030_034E,'   #Manufacturing
+                              'C24030_035E,'   #Wholesale trade
+                              'C24030_036E,'   #Retail trade
+                              'C24030_038E,'   #Transportation and warehousing
+                              'C24030_039E,'   #Utilities
+                              'C24030_040E,'   #Information
+                              'C24030_042E,'   #Finance and insurance
+                              'C24030_043E,'   #Real estate and rental and leasing
+                              'C24030_045E,'   #Professional, scientific, and technical services
+                              'C24030_046E,'   #Management of companies and enterprises
+                              'C24030_047E,'   #Administrative and support and waste management services
+                              'C24030_049E,'   #Educational services
+                              'C24030_050E,'   #Health care and social assistance
+                              'C24030_052E,'   #Arts, entertainment, and recreation
+                              'C24030_053E,'   #Accommodation and food services
+                              'C24030_054E,'   #Other services
+                              'C24030_055E'    #Public administration
+               ]
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -941,7 +1004,7 @@ list = [summary, demographics, race, ethnicity1, ethnicity2, foreign_native, rel
         earnings_type, family_income, language_home, occupation_median_earnings, occupation,
         occupancy_status, tenure_status, vacancy_status, householder_age, household_size, contract_rent, rent_asked,
         house_value, price_asked, mortgage_status, monthly_owner_costs, total_housing_costs, taxes_paid,
-        bedrooms, year_structure_built, units_in_structure, other_race1, other_race2]
+        bedrooms, year_structure_built, units_in_structure, other_race1, other_race2, detailed_occupation_male, detailed_occupation_female]
 
 
 
@@ -1005,15 +1068,49 @@ for x in list:
     res = req.json()
     preresults = res[1]
     #preresults as a result of for-loops to acquire data
-    print(preresults)
+    print("Loading Parameter")
+    print(list.index(x))
+    print("of 42")
     #taking the presults and appending to results
     for y in preresults:
         results.append(y)
 
-print(results[735:785])
-#----------------------------------[CREATING PANDA DATAFRAMES]--------------------------------------------------
+
+#-------------------------------DISPLAY SUMMARY INFORMATION--------------------------------------------
+
+#parse census results by numerical index
+census_name = results[0]
+total_housing_units = int(results[1])
+total_occupied_units = int(results[2])
+total_vacant_units = int(results[3])
+total_renter_occupied_units = int(results[4])
+total_population = results[5]
+median_age = results[6]
+median_household_income_past12 = results[7]
+GINI_inequality_index = results[8]
+lower_quartile_house_value = results[9]
+median_house_value = results[10]
+upper_quartile_house_value = results[11]
+median_gross_rent = results[12]
+lower_quartile_rent = results[13]
+median_contract_rent = results[14]
+upper_quartile_rent = results[15]
+
+print("Data Results for:" + census_name)
+print("Microdata Area Name:", microdata_area_name)
+print("Metropolitan Statistical Area Name:",msa_Name)
+print("Total Housing Units:",total_housing_units)
+print("Total Population:",total_population)
+print("Percent Occupied Units:",round((total_occupied_units/total_housing_units)*100,2),"%")
+print("Percent Vacant Units:",round((total_vacant_units/total_housing_units)*100,2),"%")
+print("Percent Rented Units:",round((total_renter_occupied_units/total_housing_units)*100,2),"%")
+print("Median Age:", median_age)
+print("Median Household Income:",median_household_income_past12)
+print("House Value(lower 25%, median, upper 25%):" + lower_quartile_house_value, median_house_value, upper_quartile_house_value)
+print("Rent(lower 25%, median, upper 25%):" + lower_quartile_rent, median_contract_rent, upper_quartile_rent)
 
 
+#===========================[PANDAS DATAFRAMES========================================================
 
 male_age_distribution_values = results[20:43]
 male_age_distribution_keys = ["Under 5 years",
@@ -1045,9 +1142,9 @@ male_age_distribution_keys = ["Under 5 years",
 male_age_distribution = dict(zip(male_age_distribution_keys, male_age_distribution_values))
 #convert to pandas data series
 MALE_AGE_DISTRIBUTION = pd.Series(male_age_distribution)
+print(MALE_AGE_DISTRIBUTION)
 
-
-#----------------------------------[PANDA SERIES]-----------------------------------------------------
+#----------------------------------[EXECUTE PANDA SERIES]-----------------------------------------------------
 
 female_age_distribution_keys = ["Under 5 years",
                               "5 to 9 years",
@@ -1081,7 +1178,7 @@ female_age_distribution = dict(zip(female_age_distribution_keys, female_age_dist
 
 #convert to pandas data series
 FEMALE_AGE_DISTRIBUTION = pd.Series(female_age_distribution)
-
+print(FEMALE_AGE_DISTRIBUTION)
 
 #-----------------------------------------------------------------------------------------------------
 
@@ -1094,6 +1191,7 @@ df2new = pd.to_numeric(FEMALE_AGE_DISTRIBUTION, errors='raise', downcast=None)
 TOTAL_AGE_DISTRIBUTION = dfnew.add(df2new)
 
 print(TOTAL_AGE_DISTRIBUTION)
+
 #---------------------------------------------------------------------------------------------------------
 
 
@@ -1116,47 +1214,976 @@ print(RACE)
 #---------------------------------------------------------------------------------------------------------
 
 
-ethnicity1_values = results[82:123]
-ethnicity2_values = results[126:156]
+ethnicity1_values = results[83:123]
+ethnicity2_values = results[126:155]
+other_race1_values = results[735:785]
+other_race2_values = results[788:797]
+ethnicity_values = ethnicity1_values + ethnicity2_values + other_race1_values + other_race2_values
 
-ethnicity_values = ethnicity1_values + ethnicity2_values
+ethnicity_keys = ['Afghan',
+                  'Albanian',
+                  'Alsatian',
+                  'American',
+                  'Arab',
+                  'Armenian',
+                  'Assyrians',
+                  'Australians',
+                  'Austrian',
+                  'Basque',
+                  'Belgian',
+                  'Brazilian',
+                  'British',
+                  'Bulgarian',
+                  'Cajun',
+                  'Canadian',
+                  'Carpatho Rusyn',
+                  'Celtic',
+                  'Croatian',
+                  'Cypriot',
+                  'Czech',
+                  'Czechoslovakian',
+                  'Danish',
+                  'Dutch',
+                  'Eastern European',
+                  'English',
+                  'Estonian',
+                  'European',
+                  'Finnish',
+                  'French',
+                  'French Canadian',
+                  'German',
+                  'German Russian',
+                  'Greek',
+                  'Guayanese',
+                  'Hungarian',
+                  'Icelander',
+                  'Iranaian',
+                  'Irish',
+                  'Israeli',
+                  'Italian',
+                  'Latvian',
+                  'Luxemburger',
+                  'Lithuanian',
+                  'Macedonian',
+                  'Maltese',
+                  'New Zealander',
+                  'Northern European',
+                  'Norwegian',
+                  'Pennsylvania German',
+                  'Polish',
+                  'Portuguese',
+                  'Romanian',
+                  'Russian',
+                  'Scandinavian',
+                  'Scotch-Irish',
+                  'Scottish',
+                  'Serbian',
+                  'Slavic',
+                  'Slovak',
+                  'Soviet Russia',
+                  'Soviet Union',
+                  'Subsaharan Africa',
+                  'Swedish',
+                  'Swiss',
+                  'Turkish',
+                  'Ukrainian',
+                  'West Indian',
+                  'Yugoslavian',
+                  'American Indian',
+                  'Alaskan Native',
+                  'Asian Indian',
+                  'Bangladeshi',
+                  'Bhutanese',
+                  'Burmese',
+                  'Cambodian',
+                  'Chinese',
+                  'Filipino',
+                  'Hmong',
+                  'Indonesian',
+                  'Japanese',
+                  'Korean',
+                  'Laotian',
+                  'Malaysian',
+                  'Mongolian',
+                  'Nepalese',
+                  'Okinawan',
+                  'Pakistani',
+                  'Sri Lankan',
+                  'Taiwanese',
+                  'Thai',
+                  'Vietnamese',
+                  'Other Asian, Specified',
+                  'Other Asian, Not Specified',
+                  'Native Hawaiian',
+                  'Samoan',
+                  'Tongan',
+                  'Other Polynesian',
+                  'Guamanian or Chamorro',
+                  'Marshallese',
+                  'Other Micronesian',
+                  'Fijian',
+                  'Other Melanesian',
+                  'Mexican',
+                  'Puerto Rican',
+                  'Cuban',
+                  'Dominican (Dominican Republic)',
+                  'Costa Rican',
+                  'Guatemalan',
+                  'Honduran',
+                  'Nicaraguan',
+                  'Panamanian',
+                  'Salvadoran',
+                  'Other Central American',
+                  'Argentinean',
+                  'Bolivian',
+                  'Chilean',
+                  'Columbian',
+                  'Ecuadorian',
+                  'Paraguayan',
+                  'Peruvian',
+                  'Uruguayan',
+                  'Venezuelan',
+                  'Other South American',
+                  'Other Hispanic or Latino',
+                  'Spanish',
+                  'Spaniard',
+                  'Spanish American'
+            ]
 
-print(ethnicity_values)
+ethnicity = dict(zip(ethnicity_keys, ethnicity_values))
+ETHNICITY = pd.Series(ethnicity)
+print(ETHNICITY)
+
+
+#----------------------------------------------------------------------------------------------------
+
+
+foreign_native_values = results[159:161]
+foreign_native_keys = ['Native','Foreign-Born']
+
+foreign_native = dict(zip(foreign_native_keys, foreign_native_values))
+FOREIGN_NATIVE = pd.Series(foreign_native)
+
+
+print(FOREIGN_NATIVE)
+
+#------------------------------------------------------------------------------------------------------
+
+relationship_values = results[164:170]
+relationship_keys = ['Total Count',
+                     'Currently Married',
+                     'Divorced',
+                     'Separated',
+                     'Widowed'
+                     ]
+
+
+relationship = dict(zip(relationship_keys, relationship_values))
+RELATIONSHIP = pd.Series(relationship)
+
+print(RELATIONSHIP)
+#-----------------------------------------------------------------------------------------------------
+
+education_values = results[174:179]
+education_keys = ['Less Than High School Graduate',
+                  'High School Graduate',
+                  'Some College/Associates',
+                  'Bachelors Degree',
+                  'Graduate or Progressional Degree'
+                  ]
+education = dict(zip(education_keys, education_values))
+EDUCATION = pd.Series(education)
+
+print(EDUCATION)
+
+#----------------------------------------------------------------------------------------------------
+
+transportation_values = results[182:192]
+transportation_keys = ['Total Count',
+                       'Car, Van, Truck (Drove Alone)',
+                       'Car, Van, Truck (Carpooled',
+                       'Public Transportation',
+                       'Bicycle',
+                       'Walk',
+                       'Motorcycle',
+                       'Other Means',
+                       'Worked at Home'
+                       ]
+
+transportation = dict(zip(transportation_keys, transportation_values))
+TRANSPORTATION = pd.Series(transportation)
+
+print(TRANSPORTATION)
+#------------------------------------------------------------------------------------------------------
+
+time_leave_for_work_values = results[195:210]
+time_leave_for_work_keys = ['Total',
+                            '12:00 a.m. to 4:59 a.m',
+                            '5:00 a.m. to 5:29 a.m.',
+                            '5:30 a.m. to 5:59 a.m.',
+                            '6:00 a.m. to 6:29 a.m.',
+                            '6:30 a.m. to 6:59 a.m.',
+                            '7:00 a.m. to 7:29 a.m.',
+                            '7:30 a.m. to 7:59 a.m',
+                            '8:00 a.m. to 8:29 a.m.',
+                            '8:30 a.m. to 8:59 a.m.',
+                            '9:00 a.m. to 9:59 a.m.',
+                            '10:00 a.m. to 10:59 a.m.',
+                            '11:00 a.m. to 11:59 a.m',
+                            '12:00 p.m. to 3:59 p.m.',
+                            '4:00 p.m. to 11:59 p.m.'
+]
+
+time_leave_for_work = dict(zip(time_leave_for_work_keys, time_leave_for_work_values))
+TIME_LEAVE_FOR_WORK = pd.Series(time_leave_for_work)
+
+
+print(TIME_LEAVE_FOR_WORK)
+
+
+#===================================================================================================
+
+work_travel_time_values = results[213:226]
+work_travel_time_keys = ['Total',
+                         'Less than 5 minutes',
+                         '5 to 9 minutes',
+                         '10 to 14 minutes',
+                         '15 to 19 minutes',
+                         '20 to 24 minutes',
+                         '25 to 29 minutes',
+                         '30 to 34 minutes',
+                         '35 to 39 minutes',
+                         '40 to 44 minutes',
+                         '45 to 59 minutes',
+                         '60 to 89 minutes',
+                         '90 or more minutes'
+                         ]
+
+work_travel_time = dict(zip(work_travel_time_keys, work_travel_time_values))
+WORK_TRAVEL_TIME = pd.Series(work_travel_time)
+
+print(WORK_TRAVEL_TIME)
+
+
+#-----------------------------------------------------------------------------------------------------
+
+vehicle_values = results[229:236]
+vehicle_keys = ['Total',
+                'No Vehicles',
+                '1 Vehicle',
+                '2 Vehicles',
+                '3 Vehicles',
+                '4 Vehicles',
+                '5 or more Vehicles'
+                ]
+
+vehicles = dict(zip(vehicle_keys, vehicle_values))
+VEHICLES = pd.Series(vehicles)
+
+print(VEHICLES)
+
+#-----------------------------------------------------------------------------------------------------
+
+worker_class_values = results[239:248]
+worker_class_keys = ['Total Workers Count',
+                     'Employees of Private Companies',
+                     'Self-Employed in Own Incorporated Business',
+                     'Private Non-Profit Wage and Salary Workers',
+                     'Local Government Workers',
+                     'State Government Workers',
+                     'Federal Government Workers',
+                     'Self-Employed (Non Incorporated) Business Workers',
+                     'Family Workers'
+                     ]
+worker_class = dict(zip(worker_class_keys, worker_class_values))
+WORKER_CLASS = pd.Series(worker_class)
+
+print(WORKER_CLASS)
+
+#-----------------------------------------------------------------------------------------------------
+
+
+school_enrollment_values = results[264:272]
+school_enrollment_keys = ['Total Enrolled in School',
+                          'Nursery School/Preschool',
+                          'Enrolled in Kindergarten',
+                          'Enrolled in Grades 1-4',
+                          'Enrolled in Grades 5-8',
+                          'Enrolled in Grades 9-12',
+                          'Enrolled in College as Undergraduate',
+                          'Enrolled in Graduate School'
+            ]
+
+school_enrollment = dict(zip(school_enrollment_keys, school_enrollment_values))
+SCHOOL_ENROLLMENT = pd.Series(school_enrollment)
+
+print(SCHOOL_ENROLLMENT)
+
+#-----------------------------------------------------------------------------------------------------
+
+
+bachelors_degree_field_values = results[275:291]
+bachelors_degree_field_keys = ['Total',
+                               'Computers, Mathematics, Statistics',
+                               'Biological, Agricultural, and Environmental Sciences',
+                               'Physical and Related Sciences',
+                               'Psychology',
+                               'Social Sciences',
+                               'Engineering',
+                               'Multidisciplinary Studies',
+                               'Science and Engineering Related Field',
+                               'Business',
+                               'Education',
+                               'Literature and Languages',
+                               'Liberal Arts and History',
+                               'Visual and Performing Arts',
+                               'Communications',
+                               'Other'
+                               ]
+
+bachelors_degree_field = dict(zip(bachelors_degree_field_keys, bachelors_degree_field_values))
+BACHELORS_DEGREE_FIELD = pd.Series(bachelors_degree_field)
+print(BACHELORS_DEGREE_FIELD)
+
+#-----------------------------------------------------------------------------------------------------
+
+
+household_income_values = results[304:320]
+household_income_keys = ['Less than $10,000',
+                         '$10,000 to $14,999',
+                         '$15,000 to $19,999',
+                         '$20,000 to $24,999',
+                         '$25,000 to $29,999',
+                         '$30,000 to $34,999',
+                         '35,000 to $39,999',
+                         '$40,000 to $44,999',
+                         '$45,000 to $49,999',
+                         '$50,000 to $59,999',
+                         '$60,000 to $74,999',
+                         '$75,000 to $99,999',
+                         '$100,000 to $124,999',
+                         '$125,000 to $149,999',
+                         '$150,000 to $199,999',
+                         '$200,000 or more'
+                         ]
+
+household_income_12 = dict(zip(household_income_keys, household_income_values))
+HOUSEHOLD_INCOME_PAST_12 = pd.Series(household_income_12)
+print(HOUSEHOLD_INCOME_PAST_12)
+
+#-----------------------------------------------------------------------------------------------------
+
+family_income_values = results[337:354]
+family_income_keys = ['Total',
+                        'Less than $10,000',
+                         '$10,000 to $14,999',
+                         '$15,000 to $19,999',
+                         '$20,000 to $24,999',
+                         '$25,000 to $29,999',
+                         '$30,000 to $34,999',
+                         '35,000 to $39,999',
+                         '$40,000 to $44,999',
+                         '$45,000 to $49,999',
+                         '$50,000 to $59,999',
+                         '$60,000 to $74,999',
+                         '$75,000 to $99,999',
+                         '$100,000 to $124,999',
+                         '$125,000 to $149,999',
+                         '$150,000 to $199,999',
+                         '$200,000 or more'
+                      ]
+
+
+family_income_12 = dict(zip(family_income_keys, family_income_values))
+FAMILY_INCOME_PAST_12 = pd.Series(family_income_12)
+print(FAMILY_INCOME_PAST_12)
+
+
+#----------------------------------------------------------------------------------------------------
+
+
+earnings_type_values = results[323:334]
+earnings_type_keys = ['Total Earnings Count',
+                      'Wage Earnings',
+                      'With Self Employment Income',
+                      'With Interest Dividends and Rental Income',
+                      'With Social Security Income',
+                      'With Supplemental Security Income (SSI)',
+                      'With Public Assistance Income',
+                      'With Cash Public Assistance or Food Stamps/SNAP'
+                      'With Retirement Income',
+                      'With Other Types of Income'
+                      ]
+
+earnings_type = dict(zip(earnings_type_keys, earnings_type_values))
+EARNINGS_TYPE = pd.Series(earnings_type)
+print(EARNINGS_TYPE)
+
+#-----------------------------------------------------------------------------------------------------
+
+language_home_values = results[357:371]
+language_home_keys = ['Total',
+                      'Speak only English',
+                      'Speak Spanish',
+                      'French, Haitian, or Cajun',
+                      'Germanic or West Germanic Language',
+                      'Russian, Polish, or other Slavic languages',
+                      'Other Indo-European languages',
+                      'Korean',
+                      'Chinese(Mandarin and Cantonese',
+                      'Vietnamese',
+                      'Tagalog and Filipino',
+                      'Other Asian and Pacific Island Language',
+                      'Arabic',
+                      'Other Unspecified Language'
+                      ]
+language_home = dict(zip(language_home_keys, language_home_values))
+LANGUAGE_HOME = pd.Series(language_home)
+print(LANGUAGE_HOME)
+
+#-----------------------------------------------------------------------------------------------------
+
+occupation_earnings_values = results[374:405]
+occupation_earnings_keys = ['Total Median',
+                            'Management, business, and financial occupations',
+                            'Business and financial operations occupations',
+                            'Computer, engineering, and science occupations',
+                            'Computer and mathematical occupations',
+                            'Architecture and engineering occupations',
+                            'Life, physical, and social science occupations',
+                            'Education, legal, community service, arts, and media occupations',
+                            'Arts, design, entertainment, sports, and media occupations',
+                            'Healthcare practitioners and technical occupations',
+                            'Health diagnosing and treating practitioners and other technical occupations',
+                            'Health technologists and technicians',
+                            'Healthcare support occupations',
+                            'Protective service occupations',
+                            'Fire fighting and prevention, and other protective service workers including supervisors',
+                            'Law enforcement workers including supervisors',
+                            'Food preparation and serving related occupations',
+                            'Building and grounds cleaning and maintenance occupations',
+                            'Personal care and service occupations',
+                            'Sales and related occupations',
+                            'Office and administrative support occupations',
+                            'Farming, fishing, and forestry occupations',
+                            'Construction and extraction occupations',
+                            'Installation, maintenance, and repair occupations',
+                            'Production occupations',
+                            'Transportation occupations',
+                            'Material moving occupations'
+                            ]
+
+occupation_earnings = dict(zip(occupation_earnings_keys, occupation_earnings_values))
+OCCUPATION_EARNINGS = pd.Series(occupation_earnings)
+print(OCCUPATION_EARNINGS)
+
+#----------------------------------------------------------------------------------------------------
 
 
 
+occupation_values = results[408:421]
+occupation_keys = ['Agriculture, forestry, fishing and hunting, and mining',
+                   'Construction',
+                   'Manufacturing',
+                   'Wholesale Trade',
+                   'Retail Trade',
+                   'Transportation, Warehousing, and Utilities',
+                   'Information',
+                   'Finance and insurance, and real estate and rental and leasing',
+                   'Professional, scientific, and management, and administrative services',
+                   'Other services, except public administration',
+                   'Public administration'
+                   ]
+
+occupation = dict(zip(occupation_keys, occupation_values))
+OCCUPATION = pd.Series(occupation)
+print(OCCUPATION)
+
+#-----------------------------------------------------------------------------------------------------
+
+
+occupancy_status_values = results[425:427]
+occupancy_status_keys = ['Total Occupied',
+                         'Total Vacant'
+                    ]
+
+
+occupancy_status = dict(zip(occupancy_status_keys, occupancy_status_values))
+OCCUPANCY_STATUS = pd.Series(occupancy_status)
+print(OCCUPANCY_STATUS)
+
+#----------------------------------------------------------------------------------------------------
+
+
+tenure_status_values = results[430:432]
+tenure_status_keys = ['Owner Occupied',
+                      'Renter Occupied']
+
+tenure_status = dict(zip(tenure_status_keys, tenure_status_values))
+TENURE_STATUS = pd.Series(tenure_status)
+print(TENURE_STATUS)
+
+#----------------------------------------------------------------------------------------------------
+
+vacancy_status_values = results[435:443]
+vacancy_status_keys = ['Total Vacancy Status',
+                         'For Rent',
+                         'Rented, Not Occupied',
+                         'For Sale Only',
+                         'Sold, not occupied',
+                         'For seasonal, recreational, or occasional use',
+                         'For migrant workers',
+                         'Other Vacant'
+                         ]
+
+vacancy_status = dict(zip(vacancy_status_keys, vacancy_status_values))
+VACANCY_STATUS = pd.Series(vacancy_status)
+print(VACANCY_STATUS)
+
+#----------------------------------------------------------------------------------------------------
+
+householder_age_values = results[446:467]
+householder_age_keys = ['Total occupied',
+                        'Owner occupied',
+                   'Owner occupied, Householder 15 to 24 years',
+                   'Owner occupied, Householder 25 to 34 years',
+                   'Owner occupied, Householder 35 to 44 years',
+                   'Owner occupied, Householder 45 to 54 years',
+                   'Owner occupied, Householder 55 to 59 years',
+                   'Owner occupied, Householder 60 to 64 years',
+                   'Owner occupied, Householder 65 to 74 years',
+                   'Owner occupied, Householder 75 to 84 years',
+                   'Owner occupied, Householder 85 years and over',
+                   'Renter occupied',
+                   'Renter occupied, Householder 15 to 24 years',
+                   'Renter occupied, Householder 25 to 34 years',
+                   'Renter occupied, Householder 35 to 44 years',
+                   'Renter occupied, Householder 45 to 54 years',
+                   'Renter occupied, Householder 55 to 59 years',
+                   'Renter occupied, Householder 60 to 64 years',
+                   'Renter occupied, Householder 65 to 74 years',
+                   'Renter occupied, Householder 75 to 84 years',
+                   'Renter occupied, Householder 85 years and over'
+                ]
+
+householder_age = dict(zip(householder_age_keys, householder_age_values))
+HOUSEHOLDER_AGE = pd.Series(householder_age)
+print(HOUSEHOLDER_AGE)
+
+#-----------------------------------------------------------------------------------------------------
+
+
+household_size_values = results[470:487]
+household_size_keys = ['Total Owner Occupied',
+                  'Owner Occupied, 1 Person Household',
+                  'Owner occupied, 2-person household',
+                  'Owner occupied, 3-person household',
+                  'Owner occupied, 4-person household',
+                  'Owner occupied, 5-person household',
+                  'Owner occupied, 6-person household',
+                  'Owner occupied, 7-or-more person household',
+                  'Renter occupied',
+                  'Renter occupied, 1-person household',
+                  'Renter occupied, 2-person household',
+                  'Renter occupied, 3-person household',
+                  'Renter occupied, 4-person household',
+                  'Renter occupied, 5-person household',
+                  'Renter occupied, 6-person household',
+                  'Renter occupied, 7-or-more person household',
+                  ]
+
+householder_size = dict(zip(household_size_keys, household_size_values))
+HOUSEHOLDER_SIZE = pd.Series(householder_size)
+print(HOUSEHOLDER_SIZE)
+
+#-----------------------------------------------------------------------------------------------------
+
+
+contract_rent_values = results[490:520]
+contract_rent_keys = ['Total',
+                      'With Cash Rent',
+                      'No Cash Rent',
+                      'With cash rent, Less than $100',
+                      'With cash rent, $100 to $149',
+                      'With cash rent, $150 to $199',
+                      'With cash rent, $200 to $249',
+                      'With cash rent, $250 to $299',
+                      'With cash rent, $300 to $349',
+                      'With cash rent, $350 to $399',
+                      'With cash rent, $400 to $449',
+                      'With cash rent, $450 to $499',
+                      'With cash rent, $500 to $549',
+                      'With cash rent, $550 to $599',
+                      'With cash rent, $600 to $649',
+                      'With cash rent, $650 to $699',
+                      'With cash rent, $700 to $749',
+                      'With cash rent, $750 to $799',
+                      'With cash rent, $800 to $899',
+                      'With cash rent, $900 to $999',
+                      'With cash rent, $1,000 to $1,249',
+                      'With cash rent, $1,250 to $1,499',
+                      'With cash rent, $1,500 to $1,999',
+                      'With cash rent, $2,000 to $2,499',
+                      'With cash rent, $2,500 to $2,999',
+                      'With cash rent, $3,000 to $3,499',
+                      'With cash rent, $3,500 or more',
+                      'Lower contract rent quartile',
+                      'Median contract rent',
+                      'Upper contract rent quartile'
+                ]
+
+
+contract_rent = dict(zip(contract_rent_keys, contract_rent_values))
+CONTRACT_RENT = pd.Series(contract_rent)
+print(CONTRACT_RENT)
+
+#------------------------------------------------------------------------------------------------------
+
+rent_asked_values = results[523:548]
+rent_asked_keys = ['Total',
+              'Less than $100',
+              '$100 to $149',
+              '$150 to $199',
+              '$200 to $249',
+              '$250 to $299',
+              '$300 to $349',
+              '$350 to $399',
+              '$400 to $449',
+              '$450 to $499',
+              '$500 to $549',
+              '$550 to $599',
+              '$600 to $649',
+              '$650 to $699',
+              '$700 to $749',
+              '$750 to $799',
+              '$800 to $899',
+              '$900 to $999',
+              '$1,000 to $1,249',
+              '$1,250 to $1,499',
+              '$1,500 to $1,999',
+              '2,000 to $2,499',
+              '$2,500 to $2,999',
+              '$3,000 to $3,499',
+              '$3,500 or more'
+              ]
+
+
+rent_asked = dict(zip(rent_asked_keys, rent_asked_values))
+RENT_ASKED = pd.Series(rent_asked)
+print(RENT_ASKED)
+
+#----------------------------------------------------------------------------------------------------
+
+house_values = results[551:580]
+house_keys  = ['Less than $10,000',
+               '$10,000 to $14,999',
+               '$15,000 to $19,999',
+               '$20,000 to $24,999',
+               '$25,000 to $29,999',
+               '$30,000 to $34,999',
+               '$35,000 to $39,999',
+               '$40,000 to $49,999',
+               '50,000 to $59,999',
+               '$60,000 to $69,999',
+               '$70,000 to $79,999',
+               '$80,000 to $89,999',
+               '$90,000 to $99,999',
+               '$100,000 to $124,999',
+               '$125,000 to $149,999',
+               '$150,000 to $174,999',
+               '$175,000 to $199,999',
+               '$200,000 to $249,999',
+               '$250,000 to $299,999',
+               '$300,000 to $399,999',
+               '$400,000 to $499,999',
+               '$500,000 to $749,999',
+               '$750,000 to $999,999',
+               '$1,000,000 to $1,499,999',
+               '$1,500,000 to $1,999,999',
+               '$2,000,000 or more',
+               'lower value quartile (dollars)',
+               'Median value (dollars)',
+               'Upper value quartile (dollars)'
+               ]
+
+
+house = dict(zip(house_keys, house_values))
+HOUSE_VALUES = pd.Series(house)
+print(HOUSE_VALUES)
+
+
+#-----------------------------------------------------------------------------------------------------
+
+price_asked_values = results[583:609]
+price_asked_keys = ['Less than $10,000',
+               '$10,000 to $14,999',
+               '$15,000 to $19,999',
+               '$20,000 to $24,999',
+               '$25,000 to $29,999',
+               '$30,000 to $34,999',
+               '$35,000 to $39,999',
+               '$40,000 to $49,999',
+               '$50,000 to $59,999',
+               '$60,000 to $69,999',
+               '$70,000 to $79,999',
+               '$80,000 to $89,999',
+               '$90,000 to $99,999',
+               '$100,000 to $124,999',
+               '$125,000 to $149,999',
+               '$150,000 to $174,999',
+               '$175,000 to $199,999',
+               '$200,000 to $249,999',
+               '$250,000 to $299,999',
+               '$300,000 to $399,999',
+               '$400,000 to $499,999',
+               '$500,000 to $749,999',
+               '$750,000 to $999,999',
+               '$1,000,000 to $1,499,999',
+               '$1,500,000 to $1,999,999',
+               '$2,000,000 or more'
+               ]
+
+
+price_asked = dict(zip(price_asked_keys, price_asked_values))
+PRICE_ASKED = pd.Series(price_asked)
+print(PRICE_ASKED)
+#-----------------------------------------------------------------------------------------------------
+
+monthly_owner_values = results[623:641]
+monthly_owner_keys  = ['Total Selected Monthly Costs',
+                       'Less than $200',
+                       '$200 to $299',
+                       '$300 to $399',
+                       '$400 to $499',
+                       '$500 to $599',
+                       '$600 to $699',
+                       '$700 to $799',
+                       '$800 to $899',
+                       '$900 to $999',
+                       '$1,000 to $1,249',
+                       '$1,250 to $1,499',
+                       '$1,500 to $1,999',
+                       '$2,000 to $2,499',
+                       '$2,500 to $2,999',
+                       '$3,000 to $3,499',
+                       '$3,500 to $3,999',
+                       '$4,000 or more'
+                           ]
+
+
+monthly_owner_costs = dict(zip(monthly_owner_keys, monthly_owner_values))
+MONTHLY_OWNER_COSTS = pd.Series(monthly_owner_costs)
+print(MONTHLY_OWNER_COSTS)
+
+#-----------------------------------------------------------------------------------------------------
+
+
+housing_cost_values = results[644:662]
+housing_cost_keys   = ['Estimate!!Total',
+                       'Less than $100',
+                       '$100 to $199',
+                       '$200 to $299',
+                       '$300 to $399',
+                       '$400 to $499',
+                       '$500 to $599',
+                       '$600 to $699',
+                       '$700 to $799',
+                       '$800 to $899',
+                       '$900 to $999',
+                       '$1,000 to $1,499',
+                       '$1,500 to $1,999',
+                       '$2,000 to $2,499',
+                       '$2,500 to $2,999',
+                       '$3,000 or more',
+                       'No cash rent',
+                       'Median monthly housing costs'
+                       ]
+
+
+housing_costs = dict(zip(housing_cost_keys, housing_cost_values))
+TOTAL_MONTHLY_HOUSING_COSTS = pd.Series(housing_costs)
+print(TOTAL_MONTHLY_HOUSING_COSTS)
+
+#----------------------------------------------------------------------------------------------------
+
+mortgage_status_values = results[612:620]
+mortgage_status_keys = ['Total Mortgage Status',
+                        'Housing units with a mortgage, contract to purchase, or similar debt',
+                        'With either a second mortgage or home equity loan, but not both',
+                        'Second mortgage only',
+                        'Home equity loan only',
+                        'Both second mortgage and home equity loan',
+                        'No second mortgage and no home equity loan',
+                        'Housing units without a mortgage'
+                        ]
+
+
+mortgage_status = dict(zip(mortgage_status_keys, mortgage_status_values))
+MORTGAGE_STATUS = pd.Series(mortgage_status)
+print(MORTGAGE_STATUS)
+#-----------------------------------------------------------------------------------------------------
+taxes_values = results[665:682]
+taxes_keys  = ['Total With A Mortgage',
+              'With a mortgage, Less than $800',
+              'With a mortgage, $800 to $1,499',
+              'With a mortgage, $1,500 to $1,999',
+              'With a mortgage, $2,000 to $2,999',
+              'With a mortgage, $3,000 or more',
+              'With a mortgage, No real estate taxes paid',
+              'Not mortgaged',
+              'Not mortgaged, Less than $800',
+              'Not mortgaged!!$800 to $1,499',
+              'Not mortgaged!!$1,500 to $1,999',
+              'Not mortgaged!!$2,000 to $2,999',
+              'Not mortgaged!!$3,000 or more',
+              'No real estate taxes paid',
+              'Median real estate taxes paid!!Total',
+              'Median real estate taxes paid for units with a mortgage',
+              'Median real estate taxes paid for units without a mortgage'
+              ]
+
+taxes_paid = dict(zip(taxes_keys, taxes_values))
+TAXES_PAID = pd.Series(taxes_paid)
+print(TAXES_PAID)
+
+#----------------------------------------------------------------------------------------------------
+
+bedrooms_values = results[685:692]
+bedrooms_keys = ['Bedrooms Total',
+            'No bedroom',
+            '1 bedroom',
+            '2 bedrooms',
+            '3 bedrooms',
+            '4 bedrooms',
+            '5 or more bedrooms'
+            ]
+
+bedrooms = dict(zip(bedrooms_keys, bedrooms_values))
+BEDROOMS = pd.Series(bedrooms)
+print(BEDROOMS)
+
+#----------------------------------------------------------------------------------------------------
+
+structure_age_values = results[695:706]
+structure_age_keys   = ['Built 2014 or later',
+                        'Built 2010 to 2013',
+                        'Built 2000 to 2009',
+                        'Built 1990 to 1999',
+                        'Built 1980 to 1989',
+                        'Built 1970 to 1979',
+                        'Built 1960 to 1969',
+                        'Built 1950 to 1959',
+                        'Built 1940 to 1949',
+                        'Built 1939 or earlier',
+                        'Median year structure built'
+                        ]
+
+
+structure_age = dict(zip(structure_age_keys, structure_age_values))
+STRUCTURE_AGE = pd.Series(structure_age)
+print(STRUCTURE_AGE)
+
+
+#----------------------------------------------------------------------------------------------------
+
+units_values = results[709:732]
+units_keys         = ['Total Units in Structure',
+                      'Owner-occupied housing units',
+                      'Owner-occupied housing units!!1, detached',
+                      'Owner-occupied housing units!!1, attached',
+                      'Owner-occupied housing units!!2',
+                      'Owner-occupied housing units!!3 or 4',
+                      'Owner-occupied housing units!!5 to 9',
+                      'Owner-occupied housing units!!10 to 19',
+                      'Owner-occupied housing units!!20 to 49',
+                      'Owner-occupied housing units!!50 or more',
+                      'Owner-occupied housing units!!Mobile home',
+                      'Owner-occupied housing units!!Boat, RV, van, etc.',
+                      'Renter-occupied housing units',
+                      'Renter-occupied housing units!!1, detached',
+                      'Renter-occupied housing units!!1, attached',
+                      'Renter-occupied housing units!!2',
+                      'Renter-occupied housing units!!3 or 4',
+                      'Renter-occupied housing units!!5 to 9',
+                      'Renter-occupied housing units!!10 to 19',
+                      'Renter-occupied housing units!!20 to 49',
+                      'Renter-occupied housing units!!50 or more',
+                      'Renter-occupied housing units!!Mobile home',
+                      'Renter-occupied housing units!!Boat, RV, van, etc.'
+                      ]
+
+
+units_per_structure = dict(zip(units_keys, units_values))
+UNITS_PER_STRUCTURE = pd.Series(units_per_structure)
+print(UNITS_PER_STRUCTURE)
+
+#----------------------------------------------------------------------------------------------------
+
+
+job_males_values = results[800:820]
+job_males_keys           = ['Total Male',
+                            'Agriculture, forestry, fishing and hunting',
+                            'Mining, quarrying, and oil and gas extraction',
+                            'Construction',
+                            'Manufacturing',
+                            'Wholesale trade',
+                            'Retail trade',
+                            'Transportation and warehousing',
+                            'Utilities',
+                            'Information',
+                            'Finance and insurance',
+                            'Real estate and rental and leasing',
+                            'Professional, scientific, and technical services',
+                            'Management of companies and enterprises',
+                            'Administrative and support and waste management services',
+                            'Educational services',
+                            'Health care and social assistance',
+                            'Arts, entertainment, and recreation',
+                            'Accommodation and food services',
+                            'Other services',
+                            'Public administration'
+               ]
+
+
+complete_occupation_males = dict(zip(job_males_keys, job_males_values))
+COMPLETE_OCCUPATION_MALES = pd.Series(complete_occupation_males)
+print(COMPLETE_OCCUPATION_MALES)
+
+
+#--------------------------------------------------------------------------------------------------------------
+
+
+job_females_values = results[824:844]
+job_females_keys         = ['Total Female',
+                            'Agriculture, forestry, fishing and hunting',
+                            'Mining, quarrying, and oil and gas extraction',
+                            'Construction',
+                            'Manufacturing',
+                            'Wholesale trade',
+                            'Retail trade',
+                            'Transportation and warehousing',
+                            'Utilities',
+                            'Information',
+                            'Finance and insurance',
+                            'Real estate and rental and leasing',
+                            'Professional, scientific, and technical services',
+                            'Management of companies and enterprises',
+                            'Administrative and support and waste management services',
+                            'Educational services',
+                            'Health care and social assistance',
+                            'Arts, entertainment, and recreation',
+                            'Accommodation and food services',
+                            'Other services',
+                            'Public administration'
+               ]
+
+
+complete_occupation_females = dict(zip(job_females_keys, job_females_values))
+COMPLETE_OCCUPATION_FEMALES = pd.Series(complete_occupation_females)
+print(COMPLETE_OCCUPATION_FEMALES)
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#labels = ['Men', 'Women']
-#values = [results[25], results[1]]
-
-#trace = go.Pie(labels=labels, values=values)
-
-#py.iplot([trace], filename='basic_pie_chart')
 
 #-------------------------------------------[plot online]-----------------------------------------------------------------------------------------
 
