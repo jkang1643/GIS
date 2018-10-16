@@ -1,5 +1,6 @@
 import requests
 import pandas as pd
+import json
 import numpy as np
 import matplotlib
 import cufflinks as cf
@@ -15,9 +16,9 @@ import plotly.graph_objs as go
 
 #1 = block level, 2 = tract level, 3 = zipcode, 4 = public area microdata, 5 = metropolitan area
 config = 2
-street = "140 Commonwealth Ave."
-city = "Chestnut Hill"
-state = "MA"
+street = "10900 Brittmoore Park Dr "
+city = "Houston"
+state = "TX"
 
 
 
@@ -58,7 +59,9 @@ state_id = (dictionary_geo['STATE'])
 county_id = (dictionary_geo['COUNTY'])
 tract_id = (dictionary_geo['TRACT'])
 
-
+string_latitude = json.dumps(latitude)
+string_longitude = json.dumps(longitude)
+print(string_latitude, string_longitude)
 #--------------------------------------------------------------------------------------------------
 
 #get Metropolitcan Statististical Area Code
@@ -88,6 +91,26 @@ str2 = dict(str2['geographies']['Metropolitan Statistical Areas'][0])
 msa_Name = str2["NAME"]
 metropolitan_id = str2["CBSA"]
 #-------------------------------------------------------------------------------------------------
+
+
+
+web_scrape_url = 'https://maps.googleapis.com/maps/api/streetview?'
+params = {
+    'size': '600x300',
+    'location': string_longitude + "," + string_latitude,
+    'key':'AIzaSyAEEIuRKOBNzOjMADj4hE5bGUdAFKz9oDE'
+}
+
+# Do the request and get the response data
+req = requests.get(web_scrape_url, params=params)
+if req.status_code == 200:
+    with open("C:/Users/Joe/Desktop/sample.jpg", 'wb') as f:
+        f.write(req.content)
+
+
+
+#-------------------------------------------------------------------------------------------------------
+
 
 
 #Get 2010 Census Public Use Microdata Areas

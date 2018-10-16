@@ -6,10 +6,8 @@ import plotly.graph_objs as go
 import pandas as pd
 import os
 
-
 app = dash.Dash(__name__)
 server = app.server
-
 
 # read data for tables (one df per table)
 df_fund_facts = pd.read_csv('https://plot.ly/~bdun9/2754.csv')
@@ -26,9 +24,8 @@ df_minimums = pd.read_csv('https://plot.ly/~bdun9/2799.csv')
 df_dividend = pd.read_csv('https://plot.ly/~bdun9/2800.csv')
 df_realized = pd.read_csv('https://plot.ly/~bdun9/2801.csv')
 df_unrealized = pd.read_csv('https://plot.ly/~bdun9/2802.csv')
+
 df_graph = pd.read_csv("https://plot.ly/~bdun9/2804.csv")
-
-
 
 # reusable componenets
 def make_dash_table(df):
@@ -45,7 +42,6 @@ def make_dash_table(df):
 def print_button():
     printButton = html.A(['Print PDF'],className="button no-print print",style={'position': "absolute", 'top': '-40', 'right': '0'})
     return printButton
-
 
 # includes page/full view
 def get_logo():
@@ -64,25 +60,6 @@ def get_logo():
     return logo
 
 
-def get_menu():
-    menu = html.Div([
-
-        dcc.Link('Overview', href='/overview', className="tab first"),
-
-        dcc.Link('Price Performance', href='/price-performance', className="tab"),
-
-        dcc.Link('Portfolio & Management', href='/portfolio-management', className="tab"),
-
-        dcc.Link('Fees & Minimums', href='/fees', className="tab"),
-
-        dcc.Link('Distributions', href='/distributions', className="tab"),
-
-        dcc.Link('News & Reviews', href='/news-and-reviews', className="tab")
-
-    ], className="row ")
-    return menu
-
-
 def get_header():
     header = html.Div([
 
@@ -95,16 +72,36 @@ def get_header():
     return header
 
 
+def get_menu():
+    menu = html.Div([
+
+        dcc.Link('Overview   ', href='/overview', className="tab first"),
+
+        dcc.Link('Price Performance   ', href='/price-performance', className="tab"),
+
+        dcc.Link('Portfolio & Management   ', href='/portfolio-management', className="tab"),
+
+        dcc.Link('Fees & Minimums   ', href='/fees', className="tab"),
+
+        dcc.Link('Distributions   ', href='/distributions', className="tab"),
+
+        dcc.Link('News & Reviews   ', href='/news-and-reviews', className="tab")
+
+    ], className="row ")
+    return menu
+
 ## Page layouts
 overview = html.Div([  # page 1
 
-        html.Br([]),
-        html.Br([]),
-        html.Br([]),
-        html.Br([]),
-
         print_button(),
 
+
+        html.Br([]),
+        html.Br([]),
+        html.Br([]),
+        html.Br([]),
+
+         
         html.Div([
 
             # Header
@@ -118,8 +115,7 @@ overview = html.Div([  # page 1
             html.Div([
 
                 html.Div([
-                    html.H6('Product Summary',
-                            className="button no-print print"),
+                    html.H6('Product Summary'),
 
                     html.Br([]),
 
@@ -137,8 +133,7 @@ overview = html.Div([  # page 1
                 ], className="six columns"),
 
                 html.Div([
-                    html.H6(["Fund Facts"],
-                            className="button no-print print"),
+                    html.H6(["Fund Facts"]),
                     html.Table(make_dash_table(df_fund_facts))
                 ], className="six columns"),
 
@@ -149,8 +144,7 @@ overview = html.Div([  # page 1
             html.Div([
 
                 html.Div([
-                    html.H6('Average annual performance',
-                            className="button no-print print"),
+                    html.H6('Average annual performance'),
                     dcc.Graph(
                         id = "graph-1",
                         figure={
@@ -229,8 +223,7 @@ overview = html.Div([  # page 1
                 ], className="six columns"),
 
                 html.Div([
-                    html.H6("Hypothetical growth of $10,000",
-                            className="button no-print print"),
+                    html.H6("Hypothetical growth of $10,000"),
                     dcc.Graph(
                         id="grpah-2",
                         figure={
@@ -305,14 +298,12 @@ overview = html.Div([  # page 1
             html.Div([
 
                 html.Div([
-                    html.H6('Price & Performance (%)',
-                            className="button no-print print"),
+                    html.H6('Price & Performance (%)'),
                     html.Table(make_dash_table(df_price_perf))
                 ], className="six columns"),
 
                 html.Div([
-                    html.H6("Risk Potential",
-                            className="button no-print print"),
+                    html.H6("Risk Potential"),
                     dcc.Graph(
                         id='graph-3',
                         figure = {
@@ -489,6 +480,7 @@ pricePerformance = html.Div([  # page 2
 
             # Header
             get_logo(),
+            get_header(),
             html.Br([]),
             get_menu(),
 
@@ -498,14 +490,14 @@ pricePerformance = html.Div([  # page 2
 
                 html.Div([
                     html.H6(["Current Prices"],
-                            className="button no-print print"),
+                            className="gs-header gs-table-header padded"),
                     html.Table(make_dash_table(df_current_prices))
 
                 ], className="six columns"),
 
                 html.Div([
                     html.H6(["Historical Prices"],
-                            className="button no-print print"),
+                            className="gs-header gs-table-header padded"),
                     html.Table(make_dash_table(df_hist_prices))
                 ], className="six columns"),
 
@@ -517,7 +509,7 @@ pricePerformance = html.Div([  # page 2
 
                 html.Div([
                     html.H6("Performance",
-                            className="button no-print print"),
+                            className="gs-header gs-table-header padded"),
                     dcc.Graph(
                         id='graph-4',
                         figure={
@@ -614,7 +606,7 @@ pricePerformance = html.Div([  # page 2
             html.Div([
 
                 html.Div([
-                    html.H6(["Average annual returns--updated monthly as of 02/28/2018"], className="button no-print print"),
+                    html.H6(["Average annual returns--updated monthly as of 02/28/2018"], className="gs-header gs-table-header tiny-header"),
                     html.Table(make_dash_table(df_avg_returns), className="tiny-header")
                 ], className=" twelve columns"),
 
@@ -625,7 +617,7 @@ pricePerformance = html.Div([  # page 2
             html.Div([
 
                 html.Div([
-                    html.H6(["After-tax returns--updated quarterly as of 12/31/2017"], className="button no-print print"),
+                    html.H6(["After-tax returns--updated quarterly as of 12/31/2017"], className="gs-header gs-table-header tiny-header"),
                     html.Table(make_dash_table(df_after_tax), className="tiny-header")
                 ], className=" twelve columns"),
 
@@ -636,7 +628,7 @@ pricePerformance = html.Div([  # page 2
             html.Div([
 
                 html.Div([
-                    html.H6(["Recent investment returns"], className="button no-print print"),
+                    html.H6(["Recent investment returns"], className="gs-header gs-table-header tiny-header"),
                     html.Table(make_dash_table(df_recent_returns), className="tiny-header")
                 ], className=" twelve columns"),
 
@@ -656,6 +648,7 @@ portfolioManagement = html.Div([ # page 3
             # Header
 
             get_logo(),
+            get_header(),
             html.Br([]),
             get_menu(),
 
@@ -943,6 +936,7 @@ feesMins = html.Div([  # page 4
             # Header
 
             get_logo(),
+            get_header(),
             html.Br([]),
             get_menu(),
 
@@ -1170,6 +1164,7 @@ distributions = html.Div([  # page 5
             # Header
 
             get_logo(),
+            get_header(),
             html.Br([]),
             get_menu(),
 
@@ -1234,6 +1229,7 @@ newsReviews = html.Div([  # page 6
             # Header
 
             get_logo(),
+            get_header(),
             html.Br([]),
             get_menu(),
 
@@ -1317,7 +1313,7 @@ for css in external_css:
     app.css.append_css({"external_url": css})
 
 external_js = ["https://code.jquery.com/jquery-3.2.1.min.js",
-               "https://codepen.io/bcd/                                                                                                                                                                                              bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb                                                                                                    bb   nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnncxd                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   kojhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhpen/YaXojL.js"]
+               "https://codepen.io/bcd/pen/YaXojL.js"]
 
 for js in external_js:
     app.scripts.append_script({"external_url": js})
