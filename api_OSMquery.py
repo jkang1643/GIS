@@ -5,17 +5,23 @@ from descartes import PolygonPatch
 from shapely.geometry import mapping, Polygon
 import fiona
 import geopandas as gpd
+import pyproj
+import shapely.ops as ops
+from shapely.geometry import shape
+from shapely.ops import transform
+from functools import partial
 
 
+
+
+#EPSG:4326.
 import geocoder
-
 #geocoding!
 
-street = "70 Rowes Wharf"
-city = "Boston"
-state = "MA"
-searchradius = 10
-
+street = "333 Clay Street"
+city = "Houston"
+state = "TX"
+searchradius = 30
 
 #------------------------------------------------------------------------------------------------
 web_scrape_url = 'https://geocoding.geo.census.gov/geocoder/geographies/address?'
@@ -46,6 +52,8 @@ latitude = (dictionary['coordinates']['y'])
 lat = latitude
 lon = longitude
 
+#29.757319, -95.371927 (333 Clay Street Tower)
+
 
 api = overpy.Overpass()
 # fetch all ways and nodes
@@ -73,17 +81,22 @@ for way in result.ways:
     node_list = []
     housenumber = way.tags.get("addr:housenumber", "n/a")
     streetname = way.tags.get("addr:street", "n/a")
-    print(housenumber, streetname)
-    print(way.tags.get("name"))
-    print(way.tags.get("building"))
-    print(way.tags.get("height"))
-    print(way.tags.get("building:height"))
-    print(way.tags.get("building:levels"))
-    print(way.tags.get("building:material"))
+    address = housenumber + " " + streetname
+    print(address)
+    print(way.tags.get("name", ""))
+    print(way.tags.get("building", ""))
+    print(way.tags.get("height", ""))
+    print(way.tags.get("building:height", ""))
+    buildingfloors = way.tags.get("building:levels", "")
+    print(buildingfloors + " floors")
+    print(way.tags.get("building:material", ""))
+    print(way.tags.get("roof:material", ""))
+    print(way.tags.get("roof:shape", ""))
+    print(way.tags.get("amenity", ""))
+    print(way.tags.get("shop", ""))
     for node in way.nodes:
         node_list.append((float(node.lon), float(node.lat)))
     print(node_list)
-
 
 
 # Here's an example Shapely geometry
@@ -94,6 +107,24 @@ schema = {
     'geometry': 'Polygon',
     'properties': {'id': 'int'},
 }
+
+
+geom_area = ops.transform(
+    partial(
+        pyproj.transform,
+        pyproj.Proj(init='EPSG:4326'),
+        pyproj.Proj(
+            proj='aea',
+            lat1=poly.bounds[1],
+            lat2=poly.bounds[3])),
+    poly)
+
+
+areasqmeters = geom_area.area
+areasqfeet = areasqmeters*10.764
+
+print(areasqmeters, areasqfeet)
+
 
 # Write a new Shapefile
 with fiona.open('C:/Users/Joe/Desktop/my_shp.shp', 'w', 'ESRI Shapefile', schema) as c:
