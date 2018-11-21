@@ -16,7 +16,7 @@ import plotly.graph_objs as go
 
 #1 = block level, 2 = tract level, 3 = zipcode, 4 = public area microdata, 5 = metropolitan area
 config = 2
-street = "10900 Brittmoore Park Dr "
+street = "371 Tealwood Dr"
 city = "Houston"
 state = "TX"
 
@@ -62,6 +62,7 @@ tract_id = (dictionary_geo['TRACT'])
 string_latitude = json.dumps(latitude)
 string_longitude = json.dumps(longitude)
 print(string_latitude, string_longitude)
+print(state_id, county_id, tract_id)
 #--------------------------------------------------------------------------------------------------
 
 #get Metropolitcan Statististical Area Code

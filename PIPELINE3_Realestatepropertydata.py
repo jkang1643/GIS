@@ -322,3 +322,14 @@ if __name__ == "__main__":
         results = p.map_async(getURLlist, URL_list)
         p.close()
         p.join()
+
+
+#----------------------[additional coding pieces]---------------------------------------------------------
+
+
+
+
+
+
+
+

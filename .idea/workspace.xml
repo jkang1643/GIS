@@ -1,9 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/api_OSMquery.py" line="114" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="b8dd8100-7271-4a59-9e08-438efa4f61d0" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/api_googlegeocoder.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/buildingtyperecognition/imageclassificationhouse.ipynb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GIS Mapping.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/GIS Mapping.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PIPELINE1_42FloorsDataCompile.py" beforeDir="false" afterPath="$PROJECT_DIR$/PIPELINE1_42FloorsDataCompile.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PIPELINE3_Realestatepropertydata.py" beforeDir="false" afterPath="$PROJECT_DIR$/PIPELINE3_Realestatepropertydata.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api_CENSUS MASTER (Complete).py" beforeDir="false" afterPath="$PROJECT_DIR$/api_CENSUS MASTER (Complete).py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api_OSMquery.py" beforeDir="false" afterPath="$PROJECT_DIR$/api_OSMquery.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imageclassificationhouse.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/api call" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webmaps.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/GIS_webmaps2.ipynb" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -15,37 +28,39 @@
     <session id="-24394335">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="23" />
+          <entry key="project.closed" value="29" />
           <entry key="project.open.time.1" value="1" />
-          <entry key="project.open.time.10" value="6" />
+          <entry key="project.open.time.10" value="7" />
           <entry key="project.open.time.11" value="4" />
           <entry key="project.open.time.12" value="3" />
-          <entry key="project.open.time.13" value="2" />
-          <entry key="project.open.time.14" value="3" />
+          <entry key="project.open.time.13" value="3" />
+          <entry key="project.open.time.14" value="4" />
+          <entry key="project.open.time.15" value="3" />
           <entry key="project.open.time.16" value="2" />
-          <entry key="project.open.time.17" value="2" />
+          <entry key="project.open.time.17" value="3" />
+          <entry key="project.open.time.27" value="1" />
           <entry key="project.open.time.54" value="1" />
           <entry key="project.open.time.8" value="3" />
           <entry key="project.open.time.9" value="6" />
-          <entry key="project.opened" value="33" />
+          <entry key="project.opened" value="41" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="API_censusgeocoder" value="1" />
+          <entry key="API_censusgeocoder" value="2" />
           <entry key="Geojson" value="1" />
           <entry key="Pipfile" value="1" />
-          <entry key="api call" value="1" />
+          <entry key="api call" value="2" />
           <entry key="css" value="10" />
           <entry key="csv" value="9" />
           <entry key="demographics" value="4" />
           <entry key="html" value="1" />
           <entry key="ini" value="1" />
-          <entry key="ipynb" value="45" />
+          <entry key="ipynb" value="48" />
           <entry key="js" value="1" />
           <entry key="log" value="1" />
           <entry key="parsedsqft" value="1" />
-          <entry key="py" value="91" />
+          <entry key="py" value="122" />
           <entry key="txt" value="2" />
         </counts>
       </usages-collector>
@@ -54,10 +69,10 @@
           <entry key="CSS" value="10" />
           <entry key="CSV" value="9" />
           <entry key="HTML" value="1" />
-          <entry key="IPNB" value="45" />
+          <entry key="IPNB" value="48" />
           <entry key="JavaScript" value="1" />
-          <entry key="PLAIN_TEXT" value="6" />
-          <entry key="Python" value="97" />
+          <entry key="PLAIN_TEXT" value="7" />
+          <entry key="Python" value="129" />
           <entry key="TOML file" value="1" />
         </counts>
       </usages-collector>
@@ -69,7 +84,7 @@
           <entry key="css" value="121" />
           <entry key="demographics" value="182" />
           <entry key="dummy" value="325" />
-          <entry key="py" value="70663" />
+          <entry key="py" value="72500" />
           <entry key="txt" value="90" />
         </counts>
       </usages-collector>
@@ -77,7 +92,7 @@
         <counts>
           <entry key="CSS" value="121" />
           <entry key="PLAIN_TEXT" value="415" />
-          <entry key="Python" value="71655" />
+          <entry key="Python" value="73492" />
         </counts>
       </usages-collector>
     </session>
@@ -88,100 +103,79 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Geocoding+census tract.py">
+        <entry file="file://$PROJECT_DIR$/api_streetviewpicI.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-91">
-              <caret line="9" column="18" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
+            <state relative-caret-position="351">
+              <caret line="17" column="54" selection-start-line="17" selection-start-column="15" selection-end-line="17" selection-end-column="54" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/api_OSM.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-54">
-              <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/API_censusgeocoder">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="769">
-              <caret line="33" column="25" selection-start-line="33" selection-start-column="25" selection-end-line="33" selection-end-column="25" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/buildingtyperecognition/imageclassificationhouse.ipynb">
+          <provider selected="true" editor-type-id="ipnb-editor">
+            <state>
+              <selected id="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/PIPELINE2-RealEstateMasterData.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret line="13" column="11" selection-start-line="13" selection-start-column="11" selection-end-line="13" selection-end-column="11" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/PIPELINE3_Realestatepropertydata.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1809">
+              <caret line="80" column="23" selection-start-line="80" selection-start-column="23" selection-end-line="80" selection-end-column="23" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/api_CENSUS MASTER (Complete).py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="270">
+              <caret line="18" column="25" selection-start-line="18" selection-start-column="25" selection-end-line="18" selection-end-column="25" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dashboardapp/app.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="3213">
+              <caret line="125" column="4" selection-start-line="125" selection-start-column="4" selection-end-line="125" selection-end-column="4" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/api_OSMquery.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="155">
-              <caret line="23" column="17" selection-start-line="23" selection-start-column="17" selection-end-line="23" selection-end-column="17" />
-              <folding>
-                <element signature="e#0#13#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="270">
+              <caret line="10" column="4" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="4" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/geojson.ipynb">
-          <provider selected="true" editor-type-id="ipnb-editor">
-            <state>
-              <selected id="0" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test.ipynb">
-          <provider selected="true" editor-type-id="ipnb-editor">
-            <state>
-              <selected id="0" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/api_streetviewpicI.py">
+        <entry file="file://$PROJECT_DIR$/api-walkability score.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1080">
-              <caret line="40" selection-start-line="40" selection-end-line="40" />
+            <state relative-caret-position="540">
+              <caret line="20" column="22" selection-start-line="20" selection-start-column="22" selection-end-line="20" selection-end-column="22" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/api-googlesatillitemap.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="783">
-              <caret line="29" column="20" selection-start-line="29" selection-start-column="20" selection-end-line="29" selection-end-column="20" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/GIS Mapping.ipynb">
-          <provider selected="true" editor-type-id="ipnb-editor">
-            <state>
-              <selected id="7" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/end to end.ipynb">
-          <provider selected="true" editor-type-id="ipnb-editor">
-            <state>
-              <selected id="2" />
             </state>
           </provider>
         </entry>
@@ -210,12 +204,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/cushmanwakefieldreports.py" />
-        <option value="$PROJECT_DIR$/CUSHMANWAKEFIELD.py" />
-        <option value="$PROJECT_DIR$/test.ipynb" />
-        <option value="$PROJECT_DIR$/simpledemographicsapi.py" />
-        <option value="$PROJECT_DIR$/demographics" />
-        <option value="$PROJECT_DIR$/GISDATABASE.py" />
         <option value="$PROJECT_DIR$/Geocoding+census tract.py" />
         <option value="$PROJECT_DIR$/ACSSurveyAPI.py" />
         <option value="$PROJECT_DIR$/ACSSurveyAPI+GEOcoding+censustract.py" />
@@ -256,19 +244,25 @@
         <option value="$PROJECT_DIR$/GIS Mapping.ipynb" />
         <option value="$PROJECT_DIR$/Geojson" />
         <option value="$PROJECT_DIR$/geojson.ipynb" />
-        <option value="$PROJECT_DIR$/imageclassificationhouse.ipynb" />
         <option value="$PROJECT_DIR$/streetview pic API.py" />
         <option value="$PROJECT_DIR$/OSMquery.py" />
         <option value="$PROJECT_DIR$/OSM.py" />
+        <option value="$PROJECT_DIR$/api_googlegeocoder.py" />
+        <option value="$PROJECT_DIR$/main.py" />
+        <option value="$PROJECT_DIR$/PIPELINE1_42FloorsDataCompile.py" />
+        <option value="$PROJECT_DIR$/imageclassificationhouse.ipynb" />
+        <option value="$PROJECT_DIR$/buildingtyperecognition/imageclassificationhouse.ipynb" />
+        <option value="$PROJECT_DIR$/PIPELINE3_Realestatepropertydata.py" />
+        <option value="$PROJECT_DIR$/api_CENSUS MASTER (Complete).py" />
         <option value="$PROJECT_DIR$/api_OSMquery.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="10" />
-    <option name="y" value="-18" />
-    <option name="width" value="1606" />
-    <option name="height" value="867" />
+    <option name="x" value="-1690" />
+    <option name="y" value="-101" />
+    <option name="width" value="1598" />
+    <option name="height" value="858" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -276,6 +270,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -283,15 +278,10 @@
               <item name="GIS" type="b2602c69:ProjectViewProjectNode" />
               <item name="GIS" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="GIS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -300,6 +290,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Joe\PycharmProjects\GIS\buildingtyperecognition" />
       <recent name="C:\Users\Joe\PycharmProjects\GIS" />
       <recent name="C:\Users\Joe\PycharmProjects\GIS\dashboardapp" />
     </key>
@@ -355,7 +346,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="OSM" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="PIPELINE1_42FloorsDataCompile" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="GIS" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -367,28 +358,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="C:\Users\Joe\PycharmProjects\GIS\api_OSM.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="OSMquery" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="GIS" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="C:\Users\Joe\PycharmProjects\GIS\api_OSMquery.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/PIPELINE1_42FloorsDataCompile.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -460,7 +430,28 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="streetview pic API" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="app" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="GIS" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/dashboardapp" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/dashboardapp/app.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="GIS" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -472,7 +463,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="C:\Users\Joe\PycharmProjects\GIS\api_streetviewpicI.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -485,19 +476,19 @@
       <item itemvalue="Jupyter Notebook.GIS" />
       <item itemvalue="Python.Geocoding+census tract" />
       <item itemvalue="Python.Realestatepropertydata" />
-      <item itemvalue="Python.OSM" />
-      <item itemvalue="Python.streetview pic API" />
-      <item itemvalue="Python.OSMquery" />
       <item itemvalue="Python.api_CENSUS MASTER (Complete)" />
       <item itemvalue="Python.api_OSMquery" />
+      <item itemvalue="Python.PIPELINE1_42FloorsDataCompile" />
+      <item itemvalue="Python.main" />
+      <item itemvalue="Python.app" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.api_OSMquery" />
         <item itemvalue="Python.api_CENSUS MASTER (Complete)" />
-        <item itemvalue="Python.OSM" />
-        <item itemvalue="Python.OSMquery" />
-        <item itemvalue="Python.streetview pic API" />
+        <item itemvalue="Python.app" />
+        <item itemvalue="Python.PIPELINE1_42FloorsDataCompile" />
+        <item itemvalue="Python.main" />
       </list>
     </recent_temporary>
   </component>
@@ -582,7 +573,14 @@
       <option name="project" value="LOCAL" />
       <updated>1540323004956</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="this commit is the master">
+      <created>1540594729930</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1540594729930</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TodoView">
@@ -595,22 +593,22 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
+    <frame x="-1928" y="-89" width="1936" height="1056" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.76280326" visible="true" weight="0.117870726" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.76280326" visible="true" weight="0.09799789" />
       <window_info id="Favorites" order="1" sideWeight="0.23584905" side_tool="true" weight="0.13498099" />
       <window_info id="Structure" order="2" sideWeight="0.23751687" side_tool="true" weight="0.117870726" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.053908356" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.8910013" visible="true" weight="0.35444745" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.70547944" visible="true" weight="0.19956616" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39757413" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49936628" weight="0.32749325" />
-      <window_info anchor="bottom" id="Version Control" order="7" weight="0.0" />
-      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.36248416" side_tool="true" weight="0.32884097" />
-      <window_info anchor="bottom" id="Python Console" order="9" sideWeight="0.49936628" weight="0.09299191" />
-      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.63751584" weight="0.22102426" />
+      <window_info anchor="bottom" id="Version Control" order="6" weight="0.0" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.29452056" side_tool="true" visible="true" weight="0.19956616" />
+      <window_info anchor="bottom" id="TODO" order="8" sideWeight="0.49894625" weight="0.3264642" />
+      <window_info anchor="bottom" id="Python Console" order="9" sideWeight="0.49525815" weight="0.037960954" />
+      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.6368821" weight="0.59973043" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -646,21 +644,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="this commit is the master" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/Downloads/1.6_Regular_Expressions.ipynb">
-      <provider selected="true" editor-type-id="ipnb-editor">
-        <state>
-          <selected id="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Downloads/HW2-kangjy.ipynb" />
-    <entry file="file://$USER_HOME$/Downloads/HW2.ipynb">
-      <provider selected="true" editor-type-id="ipnb-editor">
-        <state>
-          <selected id="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/python class.ipynb">
       <provider selected="true" editor-type-id="ipnb-editor">
         <state>
@@ -695,13 +678,6 @@
     <entry file="file://$PROJECT_DIR$/new.py" />
     <entry file="file://$PROJECT_DIR$/app1.py" />
     <entry file="file://$PROJECT_DIR$/dashboardapp/assets/custom-script.js" />
-    <entry file="file://$PROJECT_DIR$/GISmapping.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="8" column="72" lean-forward="true" selection-start-line="8" selection-start-column="72" selection-end-line="8" selection-end-column="105" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/austin.csv" />
     <entry file="file://$PROJECT_DIR$/dashboardapp/assets/typography.css">
       <provider selected="true" editor-type-id="text-editor">
@@ -719,13 +695,6 @@
     <entry file="file://$PROJECT_DIR$/dashboardapp/assets/header.css">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/dashboardapp/app11.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36477">
-          <caret line="1364" column="56" selection-start-line="1364" selection-start-column="56" selection-end-line="1364" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/requests/adapters.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="157">
@@ -734,30 +703,10 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Geojson" />
-    <entry file="file://$PROJECT_DIR$/dashboardapp/app.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3213">
-          <caret line="125" column="4" selection-start-line="125" selection-start-column="4" selection-end-line="125" selection-end-column="4" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/TabulaTables.py">
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/venv/api call">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="12" selection-start-line="12" selection-end-line="12" />
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -771,20 +720,6 @@
     <entry file="file://$PROJECT_DIR$/desktop.ini">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/api-walkability score.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="513">
-          <caret line="20" column="22" selection-start-line="20" selection-start-column="22" selection-end-line="20" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/imageclassificationhouse.ipynb">
-      <provider selected="true" editor-type-id="ipnb-editor">
-        <state>
-          <selected id="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/simpledemographicsapi.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="27">
@@ -792,52 +727,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/PIPELINE1_42FloorsDataCompile.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-494">
-          <caret line="49" selection-start-line="49" selection-end-line="49" />
-          <folding>
-            <element signature="e#0#21#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PIPELINE2-RealEstateMasterData.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6048">
-          <caret line="237" column="25" selection-start-line="237" selection-start-column="25" selection-end-line="237" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PIPELINE3_Realestatepropertydata.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3456">
-          <caret line="143" column="12" selection-start-line="143" selection-start-column="12" selection-end-line="143" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/GIS_webmaps.ipynb">
-      <provider selected="true" editor-type-id="ipnb-editor">
-        <state>
-          <selected id="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api_CENSUS+IDs_Master.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6669">
-          <caret line="248" column="28" selection-start-line="248" selection-start-column="28" selection-end-line="248" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/scrape_CUSHMANWAKEFIELD.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#29#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/scrape_cushmanwakefieldreports.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -848,13 +739,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test.py">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api_CENSUS MASTER (Complete).py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="27">
-          <caret line="53" column="29" selection-start-line="53" selection-start-column="29" selection-end-line="53" selection-end-column="29" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dallasproperties.csv">
       <provider selected="true" editor-type-id="text-editor">
@@ -875,35 +759,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sf_assaults.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1246" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/GIS Mapping.ipynb">
-      <provider selected="true" editor-type-id="ipnb-editor">
-        <state>
-          <selected id="7" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/sf_assaults.html" />
     <entry file="file://$PROJECT_DIR$/Geocoding+census tract.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-91">
           <caret line="9" column="18" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api_streetviewpicI.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1080">
-          <caret line="40" selection-start-line="40" selection-end-line="40" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -914,34 +774,156 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/api-googlesatillitemap.py">
+    <entry file="file://$PROJECT_DIR$/GISmapping.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="783">
-          <caret line="29" column="20" selection-start-line="29" selection-start-column="20" selection-end-line="29" selection-end-column="20" />
+        <state relative-caret-position="-1283">
+          <caret line="8" column="108" selection-start-line="8" selection-start-column="108" selection-end-line="8" selection-end-column="108" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/api_OSM.py">
+    <entry file="file://$PROJECT_DIR$/GIS_webmaps.ipynb">
+      <provider selected="true" editor-type-id="ipnb-editor">
+        <state>
+          <selected id="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GIS Mapping.ipynb">
+      <provider selected="true" editor-type-id="ipnb-editor">
+        <state>
+          <selected id="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GIS_webmaps2.ipynb">
+      <provider selected="true" editor-type-id="ipnb-editor">
+        <state>
+          <selected id="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api_CENSUS+IDs_Master.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-54">
-          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+        <state relative-caret-position="1350">
+          <caret line="51" column="99" selection-start-line="51" selection-start-column="1" selection-end-line="51" selection-end-column="99" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api_googlegeocoder.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="15" selection-start-column="15" selection-end-line="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/API_censusgeocoder">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="769">
-          <caret line="33" column="25" selection-start-line="33" selection-start-column="25" selection-end-line="33" selection-end-column="25" />
+        <state relative-caret-position="351">
+          <caret line="13" column="1" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api-googlesatillitemap.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="445">
+          <caret line="24" column="25" selection-start-line="24" selection-start-column="25" selection-end-line="24" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api_OSM.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PIPELINE1_42FloorsDataCompile.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="27">
+          <caret line="11" column="41" selection-start-line="11" selection-start-column="41" selection-end-line="11" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dashboardapp/app11.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="445">
+          <caret line="1364" column="56" selection-start-line="1364" selection-start-column="56" selection-end-line="1364" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="2" selection-start-line="2" selection-end-line="8" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api_streetviewpicI.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="351">
+          <caret line="17" column="54" selection-start-line="17" selection-start-column="15" selection-end-line="17" selection-end-column="54" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PIPELINE2-RealEstateMasterData.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="13" column="11" selection-start-line="13" selection-start-column="11" selection-end-line="13" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PIPELINE3_Realestatepropertydata.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1809">
+          <caret line="80" column="23" selection-start-line="80" selection-start-column="23" selection-end-line="80" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api_CENSUS MASTER (Complete).py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="25" selection-start-line="18" selection-start-column="25" selection-end-line="18" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dashboardapp/app.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3213">
+          <caret line="125" column="4" selection-start-line="125" selection-start-column="4" selection-end-line="125" selection-end-column="4" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/api_OSMquery.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="155">
-          <caret line="23" column="17" selection-start-line="23" selection-start-column="17" selection-end-line="23" selection-end-column="17" />
+        <state relative-caret-position="270">
+          <caret line="10" column="4" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api-walkability score.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="20" column="22" selection-start-line="20" selection-start-column="22" selection-end-line="20" selection-end-column="22" />
           <folding>
-            <element signature="e#0#13#0" expanded="true" />
+            <element signature="e#0#15#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/venv/api call">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/buildingtyperecognition/imageclassificationhouse.ipynb">
+      <provider selected="true" editor-type-id="ipnb-editor">
+        <state>
+          <selected id="1" />
         </state>
       </provider>
     </entry>

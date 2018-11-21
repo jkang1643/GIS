@@ -7,6 +7,14 @@ import datetime
 import os
 import requests
 
+def request_patch(slf, *args, **kwargs):
+    print("Fix called")
+    timeout = kwargs.pop('timeout', 10000)
+    return slf.request_orig(*args, **kwargs, timeout=timeout)
+
+setattr(requests.sessions.Session, 'request_orig', requests.sessions.Session.request)
+requests.sessions.Session.request = request_patch
+
 forty_two_floors = 'https://42floors.com/research'
 
 page_scrape = urllib.request.urlopen(forty_two_floors)
