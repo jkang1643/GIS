@@ -1,10 +1,8 @@
 import dash
-from dash.dependencies import Input, Output
 import dash_core_components as dcc
 import dash_html_components as html
 import plotly.graph_objs as go
 import pandas as pd
-import os
 
 app = dash.Dash(__name__)
 server = app.server
@@ -115,25 +113,25 @@ overview = html.Div([  # page 1
             html.Div([
 
                 html.Div([
-                    html.H6('Product Summary'),
+                    html.H6('Property Summary'),
 
                     html.Br([]),
 
                     html.P("\
-                            As the industry’s first index fund for individual investors, \
-                            the 500 Index Fund is a low-cost way to gain diversified exposure \
-                            to the U.S. equity market. The fund offers exposure to 500 of the \
-                            largest U.S. companies, which span many different industries and \
-                            account for about three-fourths of the U.S. stock market’s value. \
-                            The key risk for the fund is the volatility that comes with its full \
-                            exposure to the stock market. Because the 500 Index Fund is broadly \
-                            diversified within the large-capitalization market, it may be \
-                            considered a core equity holding in a portfolio."),
+                            This property is located in the neighborhood of Allston in Boston, MA, \
+                            Local area demographics suggest a younger population with growth in  \
+                            21-35 age demographic which suggest rent growth of 10% for the next 4 \
+                            years. Local area analysis shows that within 5 square miles, the area \
+                            contains 2 acres of green space, and 2 Premium Grocery Stores: Whole  \
+                            Foods and Trader's, which is an indication of premium space for retail \
+                            Examining recent property transactions suggest a rent of $33 dollars per \
+                            square foot, which combined with machine learning generated operating  \
+                            costs, suggests a value of $10,392,389.00"),
 
                 ], className="six columns"),
 
                 html.Div([
-                    html.H6(["Fund Facts"]),
+                    html.H6(["Property Characteristics"]),
                     html.Table(make_dash_table(df_fund_facts))
                 ], className="six columns"),
 
@@ -144,7 +142,7 @@ overview = html.Div([  # page 1
             html.Div([
 
                 html.Div([
-                    html.H6('Average annual performance'),
+                    html.H6('Projected Rental Performance'),
                     dcc.Graph(
                         id = "graph-1",
                         figure={
@@ -153,13 +151,13 @@ overview = html.Div([  # page 1
                                     x = ["1 Year", "3 Year", "5 Year", "10 Year", "41 Year"],
                                     y = ["21.67", "11.26", "15.62", "8.37", "11.11"],
                                     marker = {
-                                      "color": "rgb(53, 83, 255)",
+                                      "color": "rgb(75, 115, 47)",
                                       "line": {
                                         "color": "rgb(255, 255, 255)",
                                         "width": 2
                                       }
                                     },
-                                    name = "500 Index Fund"
+                                    name = "Rent Growth"
                                 ),
                                 go.Bar(
                                     x = ["1 Year", "3 Year", "5 Year", "10 Year", "41 Year"],
@@ -223,17 +221,17 @@ overview = html.Div([  # page 1
                 ], className="six columns"),
 
                 html.Div([
-                    html.H6("Hypothetical growth of $10,000"),
+                    html.H6("Projected value for the next 10 years"),
                     dcc.Graph(
                         id="grpah-2",
                         figure={
                             'data': [
                                 go.Scatter(
-                                    x = ["2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018"],
-                                    y = ["10000", "7500", "9000", "10000", "10500", "11000", "14000", "18000", "19000", "20500", "24000"],
-                                    line = {"color": "rgb(53, 83, 255)"},
+                                    x = ["2018", "2019", "2020", "2021", "2022", "2023", "2024", "2025", "2026", "2027", "2028"],
+                                    y = ["$10,392,389.00", "$11,392,389.00", "13,392,389.00", "15,392,389.00", "15,392,389.00", "14,392,389.00", "16,392,389.00", "17,392,389.00", "16,792,389.00", "18,792,389.00", "20,792,389.00"],
+                                    line = {"color": "rgb(75, 115, 47)"},
                                     mode = "lines",
-                                    name = "500 Index Fund Inv"
+                                    name = "Generated using an LSTM Neural Network Time Series"
                                 )
                             ],
                             'layout': go.Layout(
@@ -260,9 +258,9 @@ overview = html.Div([  # page 1
                                 showlegend = True,
                                 xaxis = {
                                   "autorange": True,
-                                  "linecolor": "rgb(0, 0, 0)",
+                                  "linecolor": "rgb(75, 115, 47)",
                                   "linewidth": 1,
-                                  "range": [2008, 2018],
+                                  "range": [2018, 2028],
                                   "showgrid": False,
                                   "showline": True,
                                   "title": "",
@@ -270,10 +268,10 @@ overview = html.Div([  # page 1
                                 },
                                 yaxis = {
                                   "autorange": False,
-                                  "gridcolor": "rgba(127, 127, 127, 0.2)",
+                                  "gridcolor": "rgba(75, 115, 47, 0.2)",
                                   "mirror": False,
                                   "nticks": 4,
-                                  "range": [0, 30000],
+                                  "range": [8000000, 30000000],
                                   "showgrid": True,
                                   "showline": True,
                                   "ticklen": 10,
@@ -312,7 +310,7 @@ overview = html.Div([  # page 1
                                     x = ["0", "0.18", "0.18", "0"],
                                     y = ["0.2", "0.2", "0.4", "0.2"],
                                     fill = "tozerox",
-                                    fillcolor = "rgba(31, 119, 180, 0.2)",
+                                    fillcolor = "rgba(75, 115, 47, 0.2)",
                                     hoverinfo = "none",
                                     line = {"width": 0},
                                     mode = "lines",
@@ -323,7 +321,7 @@ overview = html.Div([  # page 1
                                     x = ["0.2", "0.38", "0.38", "0.2", "0.2"],
                                     y = ["0.2", "0.2", "0.6", "0.4", "0.2"],
                                     fill = "tozerox",
-                                    fillcolor = "rgba(31, 119, 180, 0.4)",
+                                    fillcolor = "rgba(75, 115, 47, 0.4)",
                                     hoverinfo = "none",
                                     line = {"width": 0},
                                     mode = "lines",
@@ -334,7 +332,7 @@ overview = html.Div([  # page 1
                                     x = ["0.4", "0.58", "0.58", "0.4", "0.4"],
                                     y = ["0.2", "0.2", "0.8", "0.6", "0.2"],
                                     fill = "tozerox",
-                                    fillcolor = "rgba(31, 119, 180, 0.6)",
+                                    fillcolor = "rgba(75, 115, 47, 0.6)",
                                     hoverinfo = "none",
                                     line = {"width": 0},
                                     mode = "lines",
@@ -345,7 +343,7 @@ overview = html.Div([  # page 1
                                     x = ["0.6", "0.78", "0.78", "0.6", "0.6"],
                                     y = ["0.2", "0.2", "1", "0.8", "0.2"],
                                     fill = "tozerox",
-                                    fillcolor = "rgb(31, 119, 180)",
+                                    fillcolor = "rgb(75, 115, 47)",
                                     hoverinfo = "none",
                                     line = {"width": 0},
                                     mode = "lines",
@@ -356,7 +354,7 @@ overview = html.Div([  # page 1
                                     x = ["0.8", "0.98", "0.98", "0.8", "0.8"],
                                     y = ["0.2", "0.2", "1.2", "1", "0.2"],
                                     fill = "tozerox",
-                                    fillcolor = "rgba(31, 119, 180, 0.8)",
+                                    fillcolor = "rgba(75, 115, 47, 0.8)",
                                     hoverinfo = "none",
                                     line = {"width": 0},
                                     mode = "lines",
@@ -371,7 +369,7 @@ overview = html.Div([  # page 1
                                       "x": 0.69,
                                       "y": 0.6,
                                       "font": {
-                                        "color": "rgb(31, 119, 180)",
+                                        "color": "rgb(75, 115, 47,)",
                                         "family": "Raleway",
                                         "size": 30
                                       },
@@ -1320,4 +1318,4 @@ for js in external_js:
 
 
 if __name__ == '__main__':
-    app.run_server(debug=False,port=5000,host='0.0.0.0')
+    app.run_server(debug=False,port=5000,host='136.167.198.162')

@@ -8,25 +8,68 @@ import os
 import requests
 
 
+def request_patch(slf, *args, **kwargs):
+    print("Fix called")
+    timeout = kwargs.pop('timeout', 10000)
+    return slf.request_orig(*args, **kwargs, timeout=timeout)
+
+
+setattr(requests.sessions.Session, 'request_orig', requests.sessions.Session.request)
+requests.sessions.Session.request = request_patch
+
+
 forty_two_floors = 'https://42floors.com/research'
 
+
 page_scrape = urllib.request.urlopen(forty_two_floors)
+
 
 # parse the html using beautiful soup and store in variable `soup`
 soup = BeautifulSoup(page_scrape, 'html.parser')
 # find city links to scrape
 
+
 result = []
+names = []
+
 data = soup.findAll('div',attrs={'class':'uniformNav -vertical'})
 for div in data:
     links = div.findAll('a')
+    print(links)
     for a in links:
         links_string = ('https://42floors.com/' + a['href'])
         result.append(links_string)
+        names.append(a['href'])
+
 result = result[15:]
 
+
+#this result is
 print(result)
+
+
+
+city_neighborhoods = {}
+#scrape individual neighborhoods in the cities into a list
+for x in result:
+    neighborhoods = []
+    page_scrape2 = urllib.request.urlopen(x)
+    soup2 = BeautifulSoup(page_scrape2, 'html.parser')
+    data2 = soup2.findAll('div',attrs={'class':'uniformNav -vertical'})
+    for div2 in data2:
+        links2 = div2.findAll('a')
+        for a in links2:
+            links_string2 = ('https://42floors.com/' + a['href'])
+            neighborhoods.append(links_string2)
+            city_neighborhoods[x] = neighborhoods[15:]
+
+
+
+print(city_neighborhoods)
+
+
 #----------------------------------------------------------------------------------------------------
+
 
 for propertytype_box in soup.find_all('div', class_='uniformNav -vertical'):
     property_type = np.nan
@@ -38,7 +81,7 @@ print(property_type_index)
 
 #takes list of urls, searches csv
 
-'''for each in result:
+for each in result:
     html = requests.get(each)
     soup = BeautifulSoup(html.text, "html.parser")
 
@@ -46,7 +89,7 @@ print(property_type_index)
         href = link['href']
 
         if any(href.endswith(x) for x in ['.csv']):
-            print(href)'''
+            print(href)
 
 
 #make datetime a string
